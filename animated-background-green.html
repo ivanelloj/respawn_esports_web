@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Green Animated Background</title>
+    <style>
+        * { 
+            box-sizing: border-box; 
+            margin: 0;
+            padding: 0;
+        }
+        
+        html, body { 
+            height: 100%; 
+            overflow: hidden;
+        }
+        
+        body {
+            font-family: "Arial", sans-serif;
+            background: #070f09;
+        }
+        
+        #bg-canvas { 
+            position: fixed; 
+            inset: 0; 
+            width: 100vw; 
+            height: 100vh; 
+            z-index: 1; 
+        }
+        
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+    
+
+    <script>
+        // Canvas particle grid background (converted to green colors)
+        (function () {
+            const canvas = document.getElementById('bg-canvas');
+            const ctx = canvas.getContext('2d', { alpha: true });
+            let width, height, dpr, points;
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            function resize() {
+                dpr = Math.min(window.devicePixelRatio || 1, 2);
+                width = canvas.width = Math.floor(window.innerWidth * dpr);
+                height = canvas.height = Math.floor(window.innerHeight * dpr);
+                canvas.style.width = '100%';
+                canvas.style.height = '100%';
+                initPoints();
+            }
+
+            function initPoints() {
+                const cols = Math.ceil((window.innerWidth) / 90);
+                const rows = Math.ceil((window.innerHeight) / 90);
+                points = [];
+                for (let y = 0; y <= rows; y++) {
+                    for (let x = 0; x <= cols; x++) {
+                        points.push({
+                            x: (x / cols) * width,
+                            y: (y / rows) * height,
+                            ox: (x / cols) * width,
+                            oy: (y / rows) * height,
+                            s: Math.random() * 1.2 + 0.4,
+                            p: Math.random() * Math.PI * 2
+                        });
+                    }
+                }
+            }
+
+            function renderStatic() {
+                ctx.clearRect(0, 0, width, height);
+                ctx.globalCompositeOperation = 'source-over';
+                for (let i = 0; i < points.length; i++) {
+                    const pt = points[i];
+                    const nx = pt.ox;
+                    const ny = pt.oy;
+                    // Changed from blue to green: rgba(79,209,255,0.22) -> rgba(79,255,153,0.22)
+                    ctx.fillStyle = 'rgba(79,255,153,0.22)';
+                    ctx.beginPath();
+                    ctx.arc(nx, ny, 1.4 * dpr * pt.s, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            function tick(t) {
+                ctx.clearRect(0, 0, width, height);
+                ctx.globalCompositeOperation = 'source-over';
+                for (let i = 0; i < points.length; i++) {
+                    const pt = points[i];
+                    const wobble = Math.sin(t * 0.001 + pt.p) * 6 * pt.s;
+                    const nx = pt.ox + wobble;
+                    const ny = pt.oy + Math.cos(t * 0.0012 + pt.p) * 6 * pt.s;
+                    
+                    // Draw connecting lines between particles
+                    if (i % 2 === 0 && points[i + 1]) {
+                        const a = points[i + 1];
+                        // Changed from blue to green: rgba(79,209,255,0.06) -> rgba(79,255,153,0.06)
+                        ctx.strokeStyle = 'rgba(79,255,153,0.06)';
+                        ctx.lineWidth = 1 * dpr;
+                        ctx.beginPath();
+                        ctx.moveTo(nx, ny);
+                        ctx.lineTo(a.ox, a.oy);
+                        ctx.stroke();
+                    }
+                    
+                    if (points[i + 10]) {
+                        const b = points[i + 10];
+                        // Changed from blue to green: rgba(10,167,255,0.04) -> rgba(34,255,153,0.04)
+                        ctx.strokeStyle = 'rgba(34,255,153,0.04)';
+                        ctx.lineWidth = 1 * dpr;
+                        ctx.beginPath();
+                        ctx.moveTo(nx, ny);
+                        ctx.lineTo(b.ox, b.oy);
+                        ctx.stroke();
+                    }
+                    
+                    // Draw the particle points
+                    // Changed from blue to green: rgba(79,209,255,0.22) -> rgba(79,255,153,0.22)
+                    ctx.fillStyle = 'rgba(79,255,153,0.22)';
+                    ctx.beginPath();
+                    ctx.arc(nx, ny, 1.4 * dpr * pt.s, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                requestAnimationFrame(tick);
+            }
+
+            window.addEventListener('resize', resize);
+            resize();
+            
+            // Start animation (or static version for reduced motion preference)
+            if (prefersReduced) {
+                renderStatic();
+            } else {
+                requestAnimationFrame(tick);
+            }
+        })();
+    </script>
+</body>
+</html>

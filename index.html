@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RESPAWN GAMING // Cyber Tech Lounge</title>
+    <meta name="description" content="Respawn Gaming — premium futuristic eSports lounge. Zones, specs, promos, games, booking in one immersive page." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Rajdhani:wght@400;600;700&family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#home">Skip to content</a>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+    <!-- Parallax Background Layers -->
+    <div class="parallax" aria-hidden="true">
+      <div class="layer layer--bg" data-parallax-speed="0.35"></div>
+      <div class="layer layer--grid" data-parallax-speed="0.65"></div>
+      <div class="layer layer--bands" data-parallax-speed-x="0.5" data-parallax-speed="0.35"></div>
+      <canvas id="particles" class="layer layer--particles" data-parallax-speed="0.65"></canvas>
+    </div>
+
+    <header class="nav" role="banner">
+      <div class="nav__inner">
+        <div class="brand" aria-label="Respawn Gaming Home">RESPAWN<span>GAMING</span></div>
+        <nav class="nav__links" role="navigation" aria-label="Primary">
+          <a href="#zones" class="nav__link" data-scroll>Zones & Prices</a>
+          <a href="#games" class="nav__link" data-scroll>Games</a>
+          <a href="#apps" class="nav__link" data-scroll>Download</a>
+          <a href="#apps" class="nav__link" data-scroll>Booking</a>
+          <a href="#contact" class="nav__link" data-scroll data-focus-contact>Contact</a>
+        </nav>
+        <div class="nav__actions">
+          <button class="theme-toggle" aria-label="Toggle color theme" title="Toggle theme">☾</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero" id="hero" aria-label="Intro">
+        <div class="hero__mesh" aria-hidden="true"></div>
+        <div class="container">
+          <h1 class="glow">YOUR UNIVERSE. YOUR CHOICE. FEEL <span>YOUR</span> GAME.</h1>
+          <p class="subtitle">Discover Respawn Gaming: premium eSports lounges where comfort and high-level service meet technological prowess.</p>
+          <div class="cta-row">
+            <button class="langame-book-btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+              <img src="assets/langame.svg" alt="LanGame Logo" class="langame-logo" />
+              BOOK NOW
+            </button>
+            <a href="#zones" class="btn btn--ghost" data-scroll>Explore Zones</a>
+          </div>
+          <div class="marquee" aria-hidden="true">
+            <div class="marquee__track">
+              <span>240–360Hz Displays</span>
+              <span>RTX 5060–5080 GPUs</span>
+              <span>Pro Peripherals</span>
+              <span>Private VIP Rooms</span>
+              <span>Cinema & PS5</span>
+              <span>LanGame Booking</span>
+              <span>240–360Hz Displays</span>
+              <span>RTX 5060–5080 GPUs</span>
+              <span>Pro Peripherals</span>
+              <span>Private VIP Rooms</span>
+              <span>Cinema & PS5</span>
+              <span>LanGame Booking</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="reviews" aria-label="Social proof">
+        <div class="container">
+          <div class="reviews">
+            <div class="counter">
+              <div class="counter__value" data-counter data-target="87">0</div>
+              <div class="micro">Google Reviews</div>
+            </div>
+            <div class="rating">
+              <div class="rating__value"><span data-counter data-decimals="1" data-target="4.9">0</span><span>/5</span></div>
+              <div class="micro">Company rating on Google</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="zones" class="section section-tight">
+        <header class="section-head">
+          <h2 class="section-title">Zones and Prices</h2>
+          <p class="section-sub">Choose your setup — from competitive to cinematic.</p>
+        </header>
+        
+        <!-- Zone Selection Buttons -->
+        <div class="zone-buttons reveal">
+          <button class="zone-btn active" data-zone="comfort">Comfort</button>
+          <button class="zone-btn" data-zone="bootcamp">Bootcamp</button>
+          <button class="zone-btn" data-zone="vip">VIP</button>
+          <button class="zone-btn" data-zone="streamer">Streamer</button>
+          <button class="zone-btn" data-zone="cinema">Cinema</button>
+        </div>
+
+        <!-- Zone Details -->
+        <div class="zone-details reveal">
+          <div class="zone-content active" data-zone-content="comfort">
+            <h3 class="zone-title">COMFORT ZONE</h3>
+            <p class="zone-description">Our Comfort Zone designed for gamers who want a balanced experience with high-performance hardware that ensures smooth gameplay and comfort. Perfect for CS 2, PUBG, Fortnite, Apex, Warzone, Battlefield, Rainbow Six.</p>
+            
+            <!-- Pricing Tiers -->
+            <div class="pricing-tiers">
+              <div class="tier tier-featured">
+                <div class="tier-header">
+                  <span class="tier-name">1 HOUR</span>
+                </div>
+                <div class="tier-duration">COMFORT</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€7</span>
+                  <span class="sub-price">€4</span>
+                </div>
+                <div class="tier-labels">
+                  <span>BASE</span>
+                  <span>REDUCED</span>
+                </div>
+              </div>
+
+              <div class="tier">
+                <div class="tier-header">
+                  <span class="tier-name">3 HOURS</span>
+                </div>
+                <div class="tier-duration">COMFORT</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€15</span>
+                  <span class="sub-price">€10</span>
+                </div>
+                <div class="tier-labels">
+                  <span>BASE</span>
+                  <span>REDUCED</span>
+                </div>
+              </div>
+
+              <div class="tier">
+                <div class="tier-header">
+                  <span class="tier-name">5 HOURS</span>
+                </div>
+                <div class="tier-duration">COMFORT</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€30</span>
+                  <span class="sub-price">€22</span>
+                </div>
+                <div class="tier-labels">
+                  <span>BASE</span>
+                  <span>REDUCED</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hardware Specs -->
+            <div class="hardware-specs">
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/cpu_10223865.svg" alt="CPU Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">INTEL CORE I7</div>
+                  <div class="spec-model">14700K</div>
+                </div>
+              </div>
+              
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/video-card_1871213.svg" alt="GPU Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">GEFORCE NVIDIA</div>
+                  <div class="spec-model">RTX 5060</div>
+                </div>
+              </div>
+              
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/keyboard.svg" alt="Keyboard Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">LOGITECH</div>
+                  <div class="spec-model">GAMING KEYBOARD</div>
+                </div>
+              </div>
+              
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/mouse_3500963.svg" alt="Mouse Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">LOGITECH</div>
+                  <div class="spec-model">GAMING MOUSE</div>
+                </div>
+              </div>
+              
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/television_2411367.svg" alt="Monitor Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">MONITOR</div>
+                  <div class="spec-model">180HZ 2K</div>
+                </div>
+              </div>
+              
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/gaming-chair_6027549.svg" alt="Gaming Chair Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">RAZER</div>
+                  <div class="spec-model">GAMING CHAIR</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="zone-actions">
+              <button class="langame-book-btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                <img src="assets/langame.svg" alt="LanGame Logo" class="langame-logo" />
+                BOOK NOW
+              </button>
+              <a href="#pricing" class="btn btn-outline" data-scroll>ALL ZONE PRICES</a>
+            </div>
+          </div>
+
+          <!-- Bootcamp Zone Content -->
+          <div class="zone-content" data-zone-content="bootcamp">
+            <h3 class="zone-title">BOOTCAMP ZONE</h3>
+            <p class="zone-description">Our Bootcamp Zone designed for serious teams and competitive players. High-performance hardware for intense training sessions and tournaments.</p>
+            <div class="pricing-tiers">
+              <div class="tier tier-featured">
+                <div class="tier-header">
+                  <span class="tier-name">1 HOUR</span>
+                </div>
+                <div class="tier-duration">BOOTCAMP</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€10</span>
+                  <span class="sub-price">€6</span>
+                </div>
+                <div class="tier-labels">
+                  <span>BASE</span>
+                  <span>REDUCED</span>
+                </div>
+              </div>
+              <div class="tier">
+                <div class="tier-header">
+                  <span class="tier-name">3 HOURS</span>
+                </div>
+                <div class="tier-duration">BOOTCAMP</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€20</span>
+                  <span class="sub-price">€15</span>
+                </div>
+                <div class="tier-labels">
+                  <span>BASE</span>
+                  <span>REDUCED</span>
+                </div>
+              </div>
+              <div class="tier">
+                <div class="tier-header">
+                  <span class="tier-name">5 HOURS</span>
+                </div>
+                <div class="tier-duration">BOOTCAMP</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€40</span>
+                  <span class="sub-price">€30</span>
+                </div>
+                <div class="tier-labels">
+                  <span>BASE</span>
+                  <span>REDUCED</span>
+                </div>
+              </div>
+            </div>
+            <div class="hardware-specs">
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/cpu_10223865.svg" alt="CPU Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">INTEL CORE I7</div>
+                  <div class="spec-model">14700K</div>
+                </div>
+              </div>
+              
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/video-card_1871213.svg" alt="GPU Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">GEFORCE NVIDIA</div>
+                  <div class="spec-model">RTX 5070 TI</div>
+                </div>
+              </div>
+              
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/keyboard.svg" alt="Keyboard Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">ASUS</div>
+                  <div class="spec-model">GAMING KEYBOARD</div>
+                </div>
+              </div>
+              
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/mouse_3500963.svg" alt="Mouse Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">ASUS</div>
+                  <div class="spec-model">GAMING MOUSE</div>
+                </div>
+              </div>
+              
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/television_2411367.svg" alt="Monitor Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">MONITOR</div>
+                  <div class="spec-model">360HZ 1080P</div>
+                </div>
+              </div>
+              
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/gaming-chair_6027549.svg" alt="Gaming Chair Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">RAZER</div>
+                  <div class="spec-model">GAMING CHAIR</div>
+                </div>
+              </div>
+            </div>
+            <div class="zone-actions">
+              <button class="langame-book-btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                <img src="assets/langame.svg" alt="LanGame Logo" class="langame-logo" />
+                BOOK NOW
+              </button>
+              <a href="#pricing" class="btn btn-outline" data-scroll>ALL ZONE PRICES</a>
+            </div>
+          </div>
+
+          <!-- VIP Zone Content -->
+          <div class="zone-content" data-zone-content="vip">
+            <h3 class="zone-title">VIP ZONE</h3>
+            <p class="zone-description">Our VIP Zone offers premium comfort and top-tier performance for the ultimate gaming experience. Perfect for streamers and content creators.</p>
+            <div class="pricing-tiers">
+              <div class="tier tier-featured">
+                <div class="tier-header">
+                  <span class="tier-name">1 HOUR</span>
+                </div>
+                <div class="tier-duration">VIP</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€13</span>
+                  <span class="sub-price">€9</span>
+                </div>
+                <div class="tier-labels">
+                  <span>BASE</span>
+                  <span>REDUCED</span>
+                </div>
+              </div>
+              <div class="tier">
+                <div class="tier-header">
+                  <span class="tier-name">3 HOURS</span>
+                </div>
+                <div class="tier-duration">VIP</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€20</span>
+                  <span class="sub-price">€15</span>
+                </div>
+                <div class="tier-labels">
+                  <span>BASE</span>
+                  <span>REDUCED</span>
+                </div>
+              </div>
+              <div class="tier">
+                <div class="tier-header">
+                  <span class="tier-name">5 HOURS</span>
+                </div>
+                <div class="tier-duration">VIP</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€35</span>
+                  <span class="sub-price">€25</span>
+                </div>
+                <div class="tier-labels">
+                  <span>BASE</span>
+                  <span>REDUCED</span>
+                </div>
+              </div>
+            </div>
+            <div class="hardware-specs">
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/cpu_10223865.svg" alt="CPU Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">INTEL CORE I9</div>
+                  <div class="spec-model">14900K</div>
+                </div>
+              </div>
+              
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/video-card_1871213.svg" alt="GPU Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">GEFORCE NVIDIA</div>
+                  <div class="spec-model">RTX 5070</div>
+                </div>
+              </div>
+              
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/keyboard.svg" alt="Keyboard Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">LOGITECH</div>
+                  <div class="spec-model">GAMING KEYBOARD</div>
+                </div>
+              </div>
+              
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/mouse_3500963.svg" alt="Mouse Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">LOGITECH</div>
+                  <div class="spec-model">GAMING MOUSE</div>
+                </div>
+              </div>
+              
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/television_2411367.svg" alt="Monitor Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">MONITOR</div>
+                  <div class="spec-model">180HZ 4K</div>
+                </div>
+              </div>
+              
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/gaming-chair_6027549.svg" alt="Gaming Chair Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">CORSAIR</div>
+                  <div class="spec-model">GAMING CHAIR</div>
+                </div>
+              </div>
+            </div>
+            <div class="zone-actions">
+              <button class="langame-book-btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                <img src="assets/langame.svg" alt="LanGame Logo" class="langame-logo" />
+                BOOK NOW
+              </button>
+              <a href="#pricing" class="btn btn-outline" data-scroll>ALL ZONE PRICES</a>
+            </div>
+          </div>
+
+          <!-- Streamer Zone Content -->
+          <div class="zone-content" data-zone-content="streamer">
+            <h3 class="zone-title">STREAMER ZONE</h3>
+            <p class="zone-description">Professional streaming setup with dual PC configuration, green screen, and broadcast lighting. Perfect for content creators and streamers.</p>
+            <div class="pricing-tiers">
+              <div class="tier tier-featured">
+                <div class="tier-header">
+                  <span class="tier-name">3 HOURS</span>
+                </div>
+                <div class="tier-duration">STREAMER</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€20</span>
+                </div>
+                <div class="tier-labels">
+                  <span>BASE</span>
+                </div>
+              </div>
+              <div class="tier">
+                <div class="tier-header">
+                  <span class="tier-name">5 HOURS</span>
+                </div>
+                <div class="tier-duration">STREAMER</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€30</span>
+                </div>
+                <div class="tier-labels">
+                  <span>BASE</span>
+                </div>
+              </div>
+              <div class="tier">
+                <div class="tier-header">
+                  <span class="tier-name">10 HOURS</span>
+                </div>
+                <div class="tier-duration">STREAMER</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€50</span>
+                </div>
+                <div class="tier-labels">
+                  <span>BASE</span>
+                </div>
+              </div>
+            </div>
+            <div class="hardware-specs">
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/cpu_10223865.svg" alt="CPU Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">INTEL CORE I9</div>
+                  <div class="spec-model">14900K</div>
+                </div>
+              </div>
+              
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/video-card_1871213.svg" alt="GPU Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">GEFORCE NVIDIA</div>
+                  <div class="spec-model">RTX 5080</div>
+                </div>
+              </div>
+              
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/keyboard.svg" alt="Keyboard Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">ASUS ROG</div>
+                  <div class="spec-model">GAMING KEYBOARD</div>
+                </div>
+              </div>
+              
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/mouse_3500963.svg" alt="Mouse Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">ASUS</div>
+                  <div class="spec-model">GAMING MOUSE</div>
+                </div>
+              </div>
+              
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/television_2411367.svg" alt="Monitor Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">MONITOR</div>
+                  <div class="spec-model">180HZ 2K</div>
+                </div>
+              </div>
+              
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/gaming-chair_6027549.svg" alt="Gaming Chair Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">CORSAIR</div>
+                  <div class="spec-model">GAMING CHAIR</div>
+                </div>
+              </div>
+            </div>
+            <div class="zone-actions">
+              <button class="langame-book-btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                <img src="assets/langame.svg" alt="LanGame Logo" class="langame-logo" />
+                BOOK NOW
+              </button>
+              <a href="#pricing" class="btn btn-outline" data-scroll>ALL ZONE PRICES</a>
+            </div>
+          </div>
+
+          <!-- Cinema Zone Content -->
+          <div class="zone-content" data-zone-content="cinema">
+            <h3 class="zone-title">CINEMA ZONE</h3>
+            <p class="zone-description">Premium cinema experience with 98" QLED display, Dolby Atmos sound system, and comfortable recliners. Perfect for movies and PS5 gaming.</p>
+            <div class="pricing-tiers">
+              <div class="tier tier-featured">
+                <div class="tier-header">
+                  <span class="tier-name">1 HOUR</span>
+                </div>
+                <div class="tier-duration">CINEMA</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€25</span>
+                  <span class="sub-price">€17</span>
+                </div>
+                <div class="tier-labels">
+                  <span>BASE</span>
+                  <span>REDUCED</span>
+                </div>
+              </div>
+              <div class="tier">
+                <div class="tier-header">
+                  <span class="tier-name">3 HOURS</span>
+                </div>
+                <div class="tier-duration">CINEMA</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€40</span>
+                  <span class="sub-price">€30</span>
+                </div>
+                <div class="tier-labels">
+                  <span>BASE</span>
+                  <span>REDUCED</span>
+                </div>
+              </div>
+              <div class="tier">
+                <div class="tier-header">
+                  <span class="tier-name">5 HOURS</span>
+                </div>
+                <div class="tier-duration">CINEMA</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€50</span>
+                  <span class="sub-price">€42</span>
+                </div>
+                <div class="tier-labels">
+                  <span>BASE</span>
+                  <span>REDUCED</span>
+                </div>
+              </div>
+            </div>
+            <div class="hardware-specs">
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/gaming-chair_6027549.svg" alt="Gaming Chair Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">RECLINERS</div>
+                  <div class="spec-model">6 PERSONS</div>
+                </div>
+              </div>
+              
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/projector.svg" alt="Projector Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">DOLBY PROJECTOR</div>
+                  <div class="spec-model">4K 120HZ</div>
+                </div>
+              </div>
+              
+              <div class="spec-item">
+                <div class="spec-icon">
+                  <img src="assets/video-card_1871213.svg" alt="Console Icon" />
+                </div>
+                <div class="spec-details">
+                  <div class="spec-brand">SONY</div>
+                  <div class="spec-model">PS5 CONSOLE</div>
+                </div>
+              </div>
+            </div>
+            <div class="zone-actions">
+              <button class="langame-book-btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                <img src="assets/langame.svg" alt="LanGame Logo" class="langame-logo" />
+                BOOK NOW
+              </button>
+              <a href="#pricing" class="btn btn-outline" data-scroll>ALL ZONE PRICES</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Green Animated Background Canvas -->
+        <canvas id="zones-bg-canvas" class="zones-background" aria-hidden="true"></canvas>
+      </section>
+
+      <section id="pricing" class="section">
+        <header class="section-head">
+          <h2 class="section-title">Pricing (EUR)</h2>
+          <p class="section-sub">All zones and sessions. Reduced prices apply <strong>09:00–15:00</strong> and <strong>21:00–03:00</strong>.</p>
+        </header>
+        <div class="pricing-notice reveal">
+          <span class="badge badge--reduced">Reduced window</span>
+          <span>9am–3pm and 9pm–3am</span>
+        </div>
+
+        <div class="pricing-panels reveal">
+          <!-- Comfort -->
+          <article class="price-panel">
+            <header class="price-head">
+              <h3 class="zone-name">Comfort</h3>
+              <div class="head-meta"><span class="chip">PC</span><span class="chip">2K • 180Hz</span></div>
+            </header>
+            <div class="price-rows">
+              <div class="row row--header"><div class="col">Session</div><div class="col">Base</div><div class="col">Reduced</div></div>
+              <div class="row"><div class="col">1 hour</div><div class="col">€7</div><div class="col">€4</div></div>
+              <div class="row"><div class="col">3 hours</div><div class="col">€15</div><div class="col">€10</div></div>
+              <div class="row"><div class="col">5 hours</div><div class="col">€30</div><div class="col">€22</div></div>
+              <div class="row"><div class="col">10 hours</div><div class="col" data-price-comfort-base10>€51</div><div class="col" data-price-comfort-red10>—</div></div>
+            </div>
+            <footer class="price-foot"><button class="btn btn-primary" data-open="booking-modal">Reserve</button></footer>
+          </article>
+
+          <!-- Bootcamp -->
+          <article class="price-panel">
+            <header class="price-head">
+              <h3 class="zone-name">Bootcamp</h3>
+              <div class="head-meta"><span class="chip">PC</span><span class="chip">360Hz</span></div>
+            </header>
+            <div class="price-rows">
+              <div class="row row--header"><div class="col">Session</div><div class="col">Base</div><div class="col">Reduced</div></div>
+              <div class="row"><div class="col">1 hour</div><div class="col">€10</div><div class="col">€6</div></div>
+              <div class="row"><div class="col">3 hours</div><div class="col">€20</div><div class="col">€15</div></div>
+              <div class="row"><div class="col">5 hours</div><div class="col">€40</div><div class="col">€30</div></div>
+              <div class="row"><div class="col">10 hours</div><div class="col" data-price-bootcamp-base10>€68</div><div class="col" data-price-bootcamp-red10>—</div></div>
+            </div>
+            <footer class="price-foot"><button class="btn btn-primary" data-open="booking-modal">Reserve</button></footer>
+          </article>
+
+          <!-- VIP -->
+          <article class="price-panel">
+            <header class="price-head">
+              <h3 class="zone-name">VIP</h3>
+              <div class="head-meta"><span class="chip">PC</span><span class="chip">4K • 180Hz</span></div>
+            </header>
+            <div class="price-rows">
+              <div class="row row--header"><div class="col">Session</div><div class="col">Base</div><div class="col">Reduced</div></div>
+              <div class="row"><div class="col">1 hour</div><div class="col">€13</div><div class="col">€9</div></div>
+              <div class="row"><div class="col">3 hours</div><div class="col">€20</div><div class="col">€15</div></div>
+              <div class="row"><div class="col">5 hours</div><div class="col">€35</div><div class="col">€25</div></div>
+              <div class="row"><div class="col">10 hours</div><div class="col" data-price-vip-base10>€60</div><div class="col" data-price-vip-red10>—</div></div>
+            </div>
+            <footer class="price-foot"><button class="btn btn-primary" data-open="booking-modal">Reserve</button></footer>
+          </article>
+
+          <!-- Streamer -->
+          <article class="price-panel">
+            <header class="price-head">
+              <h3 class="zone-name">Streamer</h3>
+              <div class="head-meta"><span class="chip">Studio</span><span class="chip">Dual PC</span></div>
+            </header>
+            <div class="price-rows">
+              <div class="row row--header"><div class="col">Session</div><div class="col">Base</div><div class="col muted">Reduced</div></div>
+              <div class="row"><div class="col">3 hours</div><div class="col">€20</div><div class="col">—</div></div>
+              <div class="row"><div class="col">5 hours</div><div class="col">€30</div><div class="col">—</div></div>
+              <div class="row"><div class="col">10 hours</div><div class="col">€50</div><div class="col">—</div></div>
+            </div>
+            <footer class="price-foot"><button class="btn btn-primary" data-open="booking-modal">Reserve</button></footer>
+          </article>
+
+          <!-- Cinema -->
+          <article class="price-panel">
+            <header class="price-head">
+              <h3 class="zone-name">Cinema</h3>
+              <div class="head-meta"><span class="chip">Room</span><span class="chip">98" QLED</span></div>
+            </header>
+            <div class="price-rows">
+              <div class="row row--header"><div class="col">Session</div><div class="col">Base</div><div class="col">Reduced</div></div>
+              <div class="row"><div class="col">1 hour</div><div class="col">€25</div><div class="col">€17</div></div>
+              <div class="row"><div class="col">3 hours</div><div class="col">€40</div><div class="col">€30</div></div>
+              <div class="row"><div class="col">5 hours</div><div class="col">€50</div><div class="col">€42</div></div>
+              <div class="row"><div class="col">10 hours</div><div class="col" data-price-cinema-base10>€85</div><div class="col" data-price-cinema-red10>—</div></div>
+            </div>
+            <footer class="price-foot"><button class="btn btn-primary" data-open="booking-modal">Reserve</button></footer>
+          </article>
+        </div>
+      </section>
+
+      <section id="games" class="section section-tight">
+        <header class="section-head">
+          <h2 class="section-title">Games</h2>
+          <p class="section-sub">Popular titles pre‑installed. Tell us what you want to play.</p>
+        </header>
+        <ul class="chips reveal" aria-label="Popular games">
+          <li>CS2</li><li>Valorant</li><li>Fortnite</li><li>Warzone</li><li>Apex Legends</li><li>League of Legends</li><li>DOTA 2</li><li>Overwatch 2</li><li>GTA V</li><li>Cyberpunk 2077</li><li>Black Myth: Wukong</li><li>Red Dead Redemption 2</li><li>Minecraft</li><li>Rocket League</li><li>FIFA</li>
+        </ul>
+      </section>
+
+      <section id="food" class="section section-tight">
+        <header class="section-head">
+          <h2 class="section-title">Food & Drinks</h2>
+          <p class="section-sub">Soft drinks and energy drinks available at the bar.</p>
+        </header>
+        <div class="cards-grid">
+          <article class="card"><h3>Soft Drinks</h3><img class="card-img" src="https://images.unsplash.com/photo-1541976076758-347942db1970?q=80&w=1200&auto=format&fit=crop" alt="Assorted soft drinks" /><p>Chilled selection to keep you refreshed.</p></article>
+          <article class="card"><h3>Energy Drinks</h3><img class="card-img" src="https://images.unsplash.com/photo-1541976076758-347942db1970?q=80&w=1200&auto=format&fit=crop" alt="Energy drink cans" /><p>Stay focused during intense matches.</p></article>
+        </div>
+      </section>
+
+      <section id="apps" class="section">
+        <div class="langame-cutout-container">
+          <!-- Integrated Background Canvas -->
+          <canvas id="langame-bg-canvas" class="langame-background" aria-hidden="true"></canvas>
+          
+          <!-- Animated Background Elements -->
+          <div class="langame-bg-effects">
+            <div class="floating-orb orb-1"></div>
+            <div class="floating-orb orb-2"></div>
+            <div class="floating-orb orb-3"></div>
+            <div class="grid-overlay"></div>
+            <div class="pulse-ring ring-1"></div>
+            <div class="pulse-ring ring-2"></div>
+          </div>
+          
+          <!-- Main Content Container -->
+          <div class="langame-container">
+            <!-- Left Content -->
+            <div class="langame-content">
+              <div class="langame-badge">
+                <img src="assets/langame.svg" alt="LanGame Logo" class="langame-badge-logo" />
+                <span>LANGAME</span>
+              </div>
+              
+              <h1 class="langame-title">
+                Download
+                <span class="langame-title-highlight">booking app</span>
+              </h1>
+              
+              <p class="langame-subtitle">
+                To make a reservation, <strong>install the LanGame app</strong>
+              </p>
+              
+              <!-- Feature List -->
+              <div class="langame-features">
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <div class="feature-icon-inner">QR</div>
+                  </div>
+                  <div class="feature-text">
+                    <h3>QR-CODE LOGIN</h3>
+                    <p>Sign in without username and password</p>
+                  </div>
+                </div>
+                
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <div class="feature-icon-inner">📍</div>
+                  </div>
+                  <div class="feature-text">
+                    <h3>CLUB MAP ONLINE</h3>
+                    <p>Check which PC's are available in real time</p>
+                  </div>
+                </div>
+                
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <div class="feature-icon-inner">⚡</div>
+                  </div>
+                  <div class="feature-text">
+                    <h3>FAST BOOKING</h3>
+                    <p>Reserve your favorite PC with an extra <span class="discount">10% discount</span></p>
+                  </div>
+                </div>
+                
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <div class="feature-icon-inner">💰</div>
+                  </div>
+                  <div class="feature-text">
+                    <h3>BOOKING CALC.</h3>
+                    <p>A built-in tool to find <strong>the best offer</strong></p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Download Buttons -->
+              <div class="langame-download-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.f5computers.langame_aggregator&hl=en" class="download-btn google-play" target="_blank" rel="noopener">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" />
+                </a>
+                <a href="https://apps.apple.com/us/app/langame/id1642484175" class="download-btn app-store" target="_blank" rel="noopener">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" />
+                </a>
+              </div>
+            </div>
+            
+            <!-- Right Content - Futuristic Dashboard -->
+            <div class="langame-dashboard-container">
+              <!-- Central Hub -->
+              <div class="central-hub">
+                <div class="hub-core">
+                  <img src="assets/langame.svg" alt="LanGame" class="hub-logo" />
+                  <div class="hub-pulse"></div>
+                </div>
+                <div class="hub-rings">
+                  <div class="hub-ring ring-1"></div>
+                  <div class="hub-ring ring-2"></div>
+                  <div class="hub-ring ring-3"></div>
+                </div>
+              </div>
+              
+              <!-- Floating Data Cards -->
+              <div class="data-card card-1">
+                <div class="card-header">
+                  <div class="card-icon">⚡</div>
+                  <div class="card-status online"></div>
+                </div>
+                <div class="card-content">
+                  <div class="card-title">FAST BOOKING</div>
+                  <div class="card-value">10% OFF</div>
+                  <div class="card-progress">
+                    <div class="progress-bar" style="width: 85%"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="data-card card-2">
+                <div class="card-header">
+                  <div class="card-icon">🎮</div>
+                  <div class="card-status active"></div>
+                </div>
+                <div class="card-content">
+                  <div class="card-title">ACTIVE SESSIONS</div>
+                  <div class="card-value">24/32</div>
+                  <div class="card-progress">
+                    <div class="progress-bar" style="width: 75%"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="data-card card-3">
+                <div class="card-header">
+                  <div class="card-icon">📍</div>
+                  <div class="card-status online"></div>
+                </div>
+                <div class="card-content">
+                  <div class="card-title">AVAILABLE PCS</div>
+                  <div class="card-value">8 FREE</div>
+                  <div class="card-progress">
+                    <div class="progress-bar" style="width: 25%"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="data-card card-4">
+                <div class="card-header">
+                  <div class="card-icon">💰</div>
+                  <div class="card-status processing"></div>
+                </div>
+                <div class="card-content">
+                  <div class="card-title">BOOKING CALC</div>" style="width: 60%"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Holographic Elements -->
+              <div class="holo-element holo-1">
+                <div class="holo-content">QR LOGIN</div>
+              </div>
+              
+              <div class="holo-element holo-2">
+                <div class="holo-content">REAL-TIME</div>
+              </div>
+              
+              <!-- Connection Lines -->
+              <div class="connection-lines">
+                <svg width="100%" height="100%" class="connection-svg">
+                  <defs>
+                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#e60012;stop-opacity:0.8" />
+                      <stop offset="100%" style="stop-color:#ff1a2e;stop-opacity:0.2" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M200,150 Q300,100 400,200" stroke="url(#lineGradient)" stroke-width="2" fill="none" class="connection-path path-1"/>
+                  <path d="M150,300 Q250,250 350,350" stroke="url(#lineGradient)" stroke-width="2" fill="none" class="connection-path path-2"/>
+                  <path d="M100,200 Q200,150 300,250" stroke="url(#lineGradient)" stroke-width="2" fill="none" class="connection-path path-3"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="locations" class="section">
+        <header class="section-head">
+          <h2 class="section-title">Location</h2>
+          <p class="section-sub">Find us easily. Parking nearby.</p>
+        </header>
+        <div class="locations-grid">
+          <article class="loc-card reveal">
+            <h3>Respawn Gaming — Main</h3>
+            <p>Hours: 9am – 3am</p>
+            <div class="map-wrap">
+              <iframe title="Respawn Gaming Location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps"></iframe>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <header class="section-head">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-sub">Email: email@gmail.com • Phone: +357xxxxxxxxx</p>
+        </header>
+        <form id="contact-form" class="contact-form reveal" novalidate>
+          <div class="grid">
+            <label>Full Name
+              <input type="text" name="name" autocomplete="name" required placeholder="Jane Player" />
+            </label>
+            <label>Email
+              <input type="email" name="email" autocomplete="email" required placeholder="you@example.com" />
+            </label>
+            <label>Zone
+              <select name="zone" required>
+                <option value="" disabled selected>Select zone</option>
+                <option>Primary</option>
+                <option>Bootcamp</option>
+                <option>VIP</option>
+                <option>Streamer Room</option>
+                <option>Cinema</option>
+              </select>
+            </label>
+            <label>Hours
+              <input type="number" name="hours" min="1" max="24" required placeholder="2" />
+            </label>
+          </div>
+          <label>Notes
+            <textarea name="notes" rows="4" placeholder="Preferred time, game, or special request"></textarea>
+          </label>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Submit Reservation</button>
+            <button class="langame-book-btn" type="button" onclick="window.open('https://wa.me/', '_blank')">
+              <img src="assets/langame.svg" alt="LanGame Logo" class="langame-logo" />
+              WHATSAPP
+            </button>
+          </div>
+          <p class="form-msg" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="brand">
+          <span class="logo-text">Respawn Gaming</span>
+          <p>© 2025 All rights reserved</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="#pricing">Pricing</a>
+          <a href="#games">Games</a>
+          <a href="#food">Food & Drinks</a>
+          <a href="#apps">App</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="contact">
+          <a href="mailto:email@gmail.com">email@gmail.com</a>
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="TikTok">TikTok</a>
+          <a href="#" aria-label="YouTube">YouTube</a>
+        </div>
+      </div>
+    </footer>
+
+    <dialog id="booking-modal" class="modal">
+      <form method="dialog" class="modal-card">
+        <header class="modal-head">
+          <h3>Quick Reservation</h3>
+          <button class="icon-btn" value="close" aria-label="Close">✕</button>
+        </header>
+        <section class="modal-body">
+          <label>Choose Zone
+            <select>
+              <option>Primary</option>
+              <option>Bootcamp</option>
+              <option>VIP</option>
+              <option>Streamer Room</option>
+              <option>Cinema</option>
+            </select>
+          </label>
+          <label>Duration (hours)
+            <input type="number" min="1" max="24" value="2" />
+          </label>
+        </section>
+        <footer class="modal-foot">
+          <button class="btn btn-ghost" value="cancel">Cancel</button>
+          <button class="btn btn-primary" value="confirm">Reserve</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <dialog id="merch-modal" class="modal">
+      <form method="dialog" class="modal-card">
+        <header class="modal-head">
+          <h3>Order Respawn Tee</h3>
+          <button class="icon-btn" value="close" aria-label="Close">✕</button>
+        </header>
+        <section class="modal-body">
+          <label>Size
+            <select>
+              <option>L</option>
+              <option>XL</option>
+              <option>XXL</option>
+            </select>
+          </label>
+          <label>Quantity
+            <input type="number" min="1" max="5" value="1" />
+          </label>
+        </section>
+        <footer class="modal-foot">
+          <button class="btn btn-ghost" value="cancel">Cancel</button>
+          <button class="btn btn-primary" value="confirm">Place Order</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
