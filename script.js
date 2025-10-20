@@ -305,22 +305,69 @@ for (const link of document.querySelectorAll('[data-scroll]')) {
   });
 }
 
-// Active link highlighting
+// Active link highlighting - reliable intersection tracking
 const sections = ['#zones','#games','#apps','#contact','#locations']
   .map((id) => document.querySelector(id)).filter(Boolean);
 const navLinks = Array.from(document.querySelectorAll('.nav__link'));
+
+function setActiveLink(href) {
+  // Always clear ALL links first to ensure only one is highlighted
+  navLinks.forEach((l) => {
+    l.setAttribute('aria-current', 'false');
+    l.classList.remove('active');
+  });
+  
+  // Then set the active one
+  const link = navLinks.find((a) => a.getAttribute('href') === href);
+  if (link) {
+    link.setAttribute('aria-current', 'true');
+  }
+}
+
+// Track intersection ratios for all sections
+const sectionRatios = new Map();
+
 const sectionObserver = new IntersectionObserver((entries) => {
+  // Update ratios for changed sections
   entries.forEach((entry) => {
     const id = '#' + entry.target.id;
-    const link = navLinks.find((a) => a.getAttribute('href') === id);
-    if (!link) return;
     if (entry.isIntersecting) {
-      navLinks.forEach((l) => l.setAttribute('aria-current','false'));
-      link.setAttribute('aria-current','true');
+      sectionRatios.set(id, entry.intersectionRatio);
+    } else {
+      sectionRatios.delete(id);
     }
   });
-}, { rootMargin: '-40% 0px -50% 0px', threshold: 0.1 });
+  
+  // Find section with highest intersection ratio
+  let maxRatio = 0;
+  let activeId = null;
+  sectionRatios.forEach((ratio, id) => {
+    if (ratio > maxRatio) {
+      maxRatio = ratio;
+      activeId = id;
+    }
+  });
+  
+  // Update highlight if we found a visible section
+  if (activeId) {
+    setActiveLink(activeId);
+  }
+}, { 
+  rootMargin: '-20% 0px -50% 0px', 
+  threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] 
+});
+
 sections.forEach((s) => sectionObserver.observe(s));
+
+// Default to first section on load
+setTimeout(() => {
+  if (sectionRatios.size === 0) setActiveLink('#zones');
+}, 200);
+
+// Honor URL hash on load
+if (location.hash && document.querySelector(location.hash)) {
+  setTimeout(() => setActiveLink(location.hash), 300);
+}
 
 // Scroll reveal animation - improved to work continuously
 const revealObserver = new IntersectionObserver((entries) => {
