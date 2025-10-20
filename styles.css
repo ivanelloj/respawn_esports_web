@@ -402,6 +402,11 @@ input:focus, select:focus, textarea:focus { border-color: var(--primary); box-sh
   margin-bottom: 32px;
 }
 
+/* Cinema zone has 4 specs, so allow 4 columns */
+[data-zone-content="cinema"] .hardware-specs {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .spec-item {
   display: flex;
   align-items: center;
@@ -643,6 +648,7 @@ body { font-family: 'Orbitron', system-ui, -apple-system, Segoe UI, Roboto, Ubun
   .cards-grid, .pricing-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
   .pricing-tiers { grid-template-columns: repeat(2, 1fr); }
   .hardware-specs { grid-template-columns: repeat(2, 1fr); }
+  [data-zone-content="cinema"] .hardware-specs { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 860px) {
   .hero-stats { grid-template-columns: 1fr; }
@@ -659,6 +665,7 @@ body { font-family: 'Orbitron', system-ui, -apple-system, Segoe UI, Roboto, Ubun
   .section { padding: 72px 0; }
   .pricing-tiers { grid-template-columns: 1fr; }
   .hardware-specs { grid-template-columns: 1fr; }
+  [data-zone-content="cinema"] .hardware-specs { grid-template-columns: 1fr; }
   .zone-buttons { gap: 8px; }
   .zone-btn { padding: 10px 16px; font-size: 14px; }
 }
@@ -666,6 +673,13 @@ body { font-family: 'Orbitron', system-ui, -apple-system, Segoe UI, Roboto, Ubun
   .cards-grid, .pricing-grid { grid-template-columns: 1fr; } 
   .contact-form .grid { grid-template-columns: 1fr; }
   .zone-actions { flex-direction: column; }
+  /* Center reduced window notice on mobile */
+  .pricing-notice { 
+    justify-content: center; 
+    text-align: center; 
+    flex-wrap: wrap; 
+    gap: 8px; 
+  }
 }
 
 /* LanGame Cutout Container */
@@ -726,6 +740,7 @@ body { font-family: 'Orbitron', system-ui, -apple-system, Segoe UI, Roboto, Ubun
   border-radius: 50%;
   background: radial-gradient(circle, rgba(230, 0, 18, 0.3) 0%, rgba(255, 26, 46, 0.1) 50%, transparent 100%);
   animation: floatOrb 8s ease-in-out infinite;
+  z-index: 1;
 }
 
 .orb-1 {
@@ -769,6 +784,7 @@ body { font-family: 'Orbitron', system-ui, -apple-system, Segoe UI, Roboto, Ubun
   background-size: 50px 50px;
   opacity: 0.2;
   animation: gridPulse 4s ease-in-out infinite;
+  z-index: 1;
 }
 
 @keyframes gridPulse {
@@ -781,6 +797,7 @@ body { font-family: 'Orbitron', system-ui, -apple-system, Segoe UI, Roboto, Ubun
   border: 2px solid rgba(230, 0, 18, 0.3);
   border-radius: 50%;
   animation: pulseRing 3s ease-out infinite;
+  z-index: 1;
 }
 
 .ring-1 {
@@ -924,12 +941,19 @@ body { font-family: 'Orbitron', system-ui, -apple-system, Segoe UI, Roboto, Ubun
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 16px rgba(230, 0, 18, 0.3);
+  flex-shrink: 0;
 }
 
 .feature-icon-inner {
   color: white;
   font-weight: 700;
   font-size: 18px;
+}
+
+.feature-icon-img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
 }
 
 .feature-text h3 {
@@ -1201,15 +1225,27 @@ body { font-family: 'Orbitron', system-ui, -apple-system, Segoe UI, Roboto, Ubun
 }
 
 .holo-1 {
-  top: 35%;
-  right: 25%;
+  top: 13%;
+  right: 43%;
   animation-delay: 2s;
 }
 
 .holo-2 {
-  bottom: 35%;
-  left: 20%;
+  top: 40%;
+  right: 18%;
   animation-delay: 5s;
+}
+
+.holo-3 {
+  bottom: 18%;
+  left: 43%;
+  animation-delay: 3.5s;
+}
+
+.holo-4 {
+  bottom: 40%;
+  left: 8%;
+  animation-delay: 6.5s;
 }
 
 @keyframes holoFloat {
@@ -1282,28 +1318,153 @@ body { font-family: 'Orbitron', system-ui, -apple-system, Segoe UI, Roboto, Ubun
 @media (max-width: 768px) {
   .langame-cutout-container {
     margin: 0 10px;
-    padding: 30px 20px;
+    padding: 30px 20px 420px;
+    position: relative;
   }
   
   .langame-title {
     font-size: 2.5rem;
   }
   
-  .langame-dashboard-container {
-    width: 100%;
-    max-width: 400px;
-    height: 320px;
+  .langame-container {
+    gap: 30px;
   }
   
+  .langame-dashboard-container {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    margin: 0 auto 80px;
+  }
+
+  /* Scale down decorative elements to fit mobile */
+  .hub-core {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .hub-logo {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .hub-ring.ring-1 {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .hub-ring.ring-2 {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .hub-ring.ring-3 {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .data-card {
+    width: 100px;
+    padding: 8px;
+    font-size: 10px;
+  }
+  
+  .card-icon {
+    font-size: 12px;
+  }
+  
+  .card-title {
+    font-size: 8px;
+  }
+  
+  .card-value {
+    font-size: 12px;
+  }
+  
+  /* Hide holo elements on mobile */
+  .holo-element {
+    display: none;
+  }
+  
+  .holo-3,
+  .holo-4 {
+    display: none;
+  }
+  
+  .floating-orb {
+    opacity: 0.4;
+  }
+  
+  .orb-1 {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .orb-2 {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .orb-3 {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .grid-overlay {
+    opacity: 0.1;
+  }
+
+  /* Move download buttons below logo at bottom of banner */
+  .langame-features {
+    margin-bottom: 30px;
+  }
+  
+  .langame-download-buttons {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    z-index: 25;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 0 20px;
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  
+  .langame-download-buttons .download-btn {
+    flex: 1;
+    max-width: 180px;
+  }
+  
+  .langame-download-buttons .download-btn img {
+    height: 40px;
+    width: 100%;
+  }
+
   .feature-item {
     flex-direction: column;
     text-align: center;
     gap: 15px;
+    padding: 15px;
   }
   
-  .data-card {
-    width: 120px;
-    padding: 10px;
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .feature-icon-img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Adjust card positions on mobile to prevent overlap */
+  .data-card.card-3 {
+    right: 3%;
+    bottom: 22%;
   }
   
   .card-title {
