@@ -579,7 +579,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--primary); box-sh
 .brand span { color: var(--primary); }
 .nav__links { display: flex; gap: 18px; margin-left: auto; }
 .nav__link { position: relative; color: var(--text); text-decoration: none; padding: 8px 10px; border-radius: 6px; transition: transform .2s ease, color .2s ease; }
-.nav__link::after { content: ""; position: absolute; inset: 0; border: 1px solid var(--outline); border-radius: 6px; box-shadow: 0 0 8px rgba(34,255,153,0.15); opacity: 0; transition: opacity .2s ease; }
+.nav__link::after { content: ""; position: absolute; inset: 0; border: 1px solid var(--outline); border-radius: 6px; box-shadow: 0 0 8px rgba(34,255,153,0.15); opacity: 0; transition: opacity .2s ease; pointer-events: none; }
 .nav__link:hover, .nav__link[aria-current="true"] { color: var(--primary); transform: translateY(-1px); }
 .nav__link:hover::after, .nav__link[aria-current="true"]::after { opacity: 1; }
 .nav__actions { display: flex; align-items: center; gap: 12px; }

@@ -282,6 +282,11 @@
 // Reference Website JavaScript - Smooth scroll and animations
 const NAV_HEIGHT = 72;
 
+// Active link highlighting - reliable intersection tracking
+const sections = ['#zones','#games','#apps','#contact','#locations']
+  .map((id) => document.querySelector(id)).filter(Boolean);
+const navLinks = Array.from(document.querySelectorAll('.nav__link'));
+
 // Smooth anchor scroll
 for (const link of document.querySelectorAll('[data-scroll]')) {
   link.addEventListener('click', (e) => {
@@ -310,11 +315,6 @@ for (const link of document.querySelectorAll('[data-scroll]')) {
     }
   });
 }
-
-// Active link highlighting - reliable intersection tracking
-const sections = ['#zones','#games','#apps','#contact','#locations']
-  .map((id) => document.querySelector(id)).filter(Boolean);
-const navLinks = Array.from(document.querySelectorAll('.nav__link'));
 
 function setActiveLink(href) {
   // Always clear ALL links first to ensure only one is highlighted
