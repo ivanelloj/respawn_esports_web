@@ -287,16 +287,29 @@ const sections = ['#zones','#games','#apps','#contact','#locations']
   .map((id) => document.querySelector(id)).filter(Boolean);
 const navLinks = Array.from(document.querySelectorAll('.nav__link'));
 
-// Smooth anchor scroll
+// Smooth anchor scroll with improved mobile support
 for (const link of document.querySelectorAll('[data-scroll]')) {
-  link.addEventListener('click', (e) => {
+  // Handle both click and touchend for better mobile support
+  const handleNavigation = (e) => {
     const href = link.getAttribute('href');
     if (!href || !href.startsWith('#')) return;
     e.preventDefault();
+    e.stopPropagation();
+    
     const target = document.querySelector(href);
     if (!target) return;
-    const y = target.getBoundingClientRect().top + window.pageYOffset - NAV_HEIGHT;
-    window.scrollTo({ top: y, behavior: 'smooth' });
+    
+    // Use scrollIntoView for better mobile compatibility
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      // For mobile devices, use scrollIntoView with offset
+      const yOffset = -NAV_HEIGHT;
+      const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    } else {
+      const y = target.getBoundingClientRect().top + window.pageYOffset - NAV_HEIGHT;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
 
     // Clear all highlights immediately on click to prevent stale highlighting
     navLinks.forEach((l) => {
@@ -313,7 +326,15 @@ for (const link of document.querySelectorAll('[data-scroll]')) {
         firstField?.focus({ preventScroll: true });
       }, 400);
     }
-  });
+  };
+  
+  link.addEventListener('click', handleNavigation);
+  // Add touch support for better mobile experience
+  link.addEventListener('touchend', (e) => {
+    // Prevent double-firing on devices that support both touch and click
+    e.preventDefault();
+    handleNavigation(e);
+  }, { passive: false });
 }
 
 function setActiveLink(href) {
