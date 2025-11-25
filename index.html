@@ -102,13 +102,29 @@
           <h2 class="section-title">Zones and Prices</h2>
           <p class="section-sub">Choose your setup — from competitive to cinematic.</p>
         </header>
+
+        <!-- Peak/Off-Peak Toggle -->
+        <div class="pricing-toggle reveal" style="display: flex; justify-content: center; gap: 12px; margin-bottom: 24px;">
+          <button class="zone-btn active" data-pricing-mode="offpeak" style="min-width: 150px;">Off-Peak Time</button>
+          <button class="zone-btn" data-pricing-mode="peak" style="min-width: 150px;">Peak Time</button>
+        </div>
+
+        <!-- Peak Hours Info -->
+        <div class="pricing-info reveal" style="text-align: center; margin-bottom: 24px; color: var(--muted); font-size: 14px;">
+          <div class="offpeak-hours" style="display: block;">
+            <strong>Off-Peak Hours:</strong> Mon-Thu 10:00-15:00 & 22:00-3:00 | Fri 10:00-15:00 | Sun 22:00-3:00
+          </div>
+          <div class="peak-hours" style="display: none;">
+            <strong>Peak Hours:</strong> Mon-Thu 15:00-22:00 | Fri 15:00-3:00 | Sat 10:00-3:00 | Sun 10:00-22:00
+          </div>
+        </div>
         
         <!-- Zone Selection Buttons -->
         <div class="zone-buttons reveal">
           <button class="zone-btn active" data-zone="comfort">Comfort</button>
           <button class="zone-btn" data-zone="bootcamp">Bootcamp</button>
           <button class="zone-btn" data-zone="vip">VIP</button>
-          <button class="zone-btn" data-zone="streamer">Supreme</button>
+          <button class="zone-btn" data-zone="supreme">Supreme</button>
           <button class="zone-btn" data-zone="cinema">PS5 Zone</button>
         </div>
 
@@ -120,48 +136,61 @@
             
             <!-- Pricing Tiers -->
             <div class="pricing-tiers">
-              <div class="tier tier-featured">
+              <!-- Off-Peak Pricing -->
+              <div class="tier tier-featured offpeak-pricing" style="display: block;">
                 <div class="tier-header">
                   <span class="tier-name">1 HOUR</span>
                 </div>
                 <div class="tier-duration">COMFORT</div>
                 <div class="tier-pricing">
-                  <span class="pack-price">€4</span>
-                  <span class="sub-price">€7</span>
+                  <span class="pack-price">€6</span>
+                  <span class="sub-price">€5</span>
                 </div>
                 <div class="tier-labels">
-                  <span>PACK</span>
-                  <span>SUB</span>
+                  <span>NO ACCOUNT</span>
+                  <span>WITH ACCOUNT</span>
                 </div>
               </div>
 
-              <div class="tier">
+              <div class="tier offpeak-pricing" style="display: block;">
                 <div class="tier-header">
                   <span class="tier-name">3 HOURS</span>
                 </div>
                 <div class="tier-duration">COMFORT</div>
                 <div class="tier-pricing">
-                  <span class="pack-price">€10</span>
-                  <span class="sub-price">€15</span>
+                  <span class="pack-price">€12</span>
                 </div>
                 <div class="tier-labels">
-                  <span>PACK</span>
-                  <span>SUB</span>
+                  <span>WITH ACCOUNT</span>
                 </div>
               </div>
 
-              <div class="tier">
+              <!-- Peak Pricing -->
+              <div class="tier tier-featured peak-pricing" style="display: none;">
                 <div class="tier-header">
-                  <span class="tier-name">5 HOURS</span>
+                  <span class="tier-name">1 HOUR</span>
                 </div>
                 <div class="tier-duration">COMFORT</div>
                 <div class="tier-pricing">
-                  <span class="pack-price">€22</span>
-                  <span class="sub-price">€30</span>
+                  <span class="pack-price">€8</span>
+                  <span class="sub-price">€7</span>
                 </div>
                 <div class="tier-labels">
-                  <span>PACK</span>
-                  <span>SUB</span>
+                  <span>NO ACCOUNT</span>
+                  <span>WITH ACCOUNT</span>
+                </div>
+              </div>
+
+              <div class="tier peak-pricing" style="display: none;">
+                <div class="tier-header">
+                  <span class="tier-name">3 HOURS</span>
+                </div>
+                <div class="tier-duration">COMFORT</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€18</span>
+                </div>
+                <div class="tier-labels">
+                  <span>WITH ACCOUNT</span>
                 </div>
               </div>
             </div>
@@ -235,7 +264,7 @@
                 <img src="assets/langame.svg" alt="LanGame Logo" class="langame-logo" />
                 BOOK NOW
               </button>
-              <a href="#pricing" class="btn btn-outline" data-scroll>ALL ZONE PRICES</a>
+              <button class="btn btn-outline" onclick="document.getElementById('pricing-modal').showModal()">VIEW ALL ZONES</button>
             </div>
           </div>
 
@@ -244,46 +273,59 @@
             <h3 class="zone-title">BOOTCAMP ZONE</h3>
             <p class="zone-description">Our Bootcamp Zone designed for serious teams and competitive players. High-performance hardware for intense training sessions and tournaments.</p>
             <div class="pricing-tiers">
-              <div class="tier tier-featured">
+              <!-- Off-Peak Pricing -->
+              <div class="tier tier-featured offpeak-pricing" style="display: block;">
                 <div class="tier-header">
                   <span class="tier-name">1 HOUR</span>
                 </div>
                 <div class="tier-duration">BOOTCAMP</div>
                 <div class="tier-pricing">
-                  <span class="pack-price">€6</span>
-                  <span class="sub-price">€10</span>
+                  <span class="pack-price">€7</span>
+                  <span class="sub-price">€6</span>
                 </div>
                 <div class="tier-labels">
-                  <span>PACK</span>
-                  <span>SUB</span>
+                  <span>NO ACCOUNT</span>
+                  <span>WITH ACCOUNT</span>
                 </div>
               </div>
-              <div class="tier">
+              <div class="tier offpeak-pricing" style="display: block;">
                 <div class="tier-header">
                   <span class="tier-name">3 HOURS</span>
                 </div>
                 <div class="tier-duration">BOOTCAMP</div>
                 <div class="tier-pricing">
                   <span class="pack-price">€15</span>
-                  <span class="sub-price">€20</span>
                 </div>
                 <div class="tier-labels">
-                  <span>PACK</span>
-                  <span>SUB</span>
+                  <span>WITH ACCOUNT</span>
                 </div>
               </div>
-              <div class="tier">
+
+              <!-- Peak Pricing -->
+              <div class="tier tier-featured peak-pricing" style="display: none;">
                 <div class="tier-header">
-                  <span class="tier-name">5 HOURS</span>
+                  <span class="tier-name">1 HOUR</span>
                 </div>
                 <div class="tier-duration">BOOTCAMP</div>
                 <div class="tier-pricing">
-                  <span class="pack-price">€30</span>
-                  <span class="sub-price">€40</span>
+                  <span class="pack-price">€9</span>
+                  <span class="sub-price">€8</span>
                 </div>
                 <div class="tier-labels">
-                  <span>PACK</span>
-                  <span>SUB</span>
+                  <span>NO ACCOUNT</span>
+                  <span>WITH ACCOUNT</span>
+                </div>
+              </div>
+              <div class="tier peak-pricing" style="display: none;">
+                <div class="tier-header">
+                  <span class="tier-name">3 HOURS</span>
+                </div>
+                <div class="tier-duration">BOOTCAMP</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€21</span>
+                </div>
+                <div class="tier-labels">
+                  <span>WITH ACCOUNT</span>
                 </div>
               </div>
             </div>
@@ -353,55 +395,64 @@
                 <img src="assets/langame.svg" alt="LanGame Logo" class="langame-logo" />
                 BOOK NOW
               </button>
-              <a href="#pricing" class="btn btn-outline" data-scroll>ALL ZONE PRICES</a>
+              <button class="btn btn-outline" onclick="document.getElementById('pricing-modal').showModal()">VIEW ALL ZONES</button>
             </div>
           </div>
 
           <!-- VIP Zone Content -->
           <div class="zone-content" data-zone-content="vip">
             <h3 class="zone-title">VIP ZONE</h3>
-            <p class="zone-description">Our VIP Zone offers premium comfort and top-tier performance for the ultimate gaming experience. Perfect for streamers and content creators.</p>
+            <p class="zone-description">Our VIP Zone offers premium comfort and top-tier performance for the ultimate gaming experience. <strong style="color: var(--primary);">Account Required - No walk-ins allowed.</strong></p>
             <div class="pricing-tiers">
-              <div class="tier tier-featured">
+              <!-- Off-Peak Pricing -->
+              <div class="tier tier-featured offpeak-pricing" style="display: block;">
                 <div class="tier-header">
                   <span class="tier-name">1 HOUR</span>
                 </div>
                 <div class="tier-duration">VIP</div>
                 <div class="tier-pricing">
-                  <span class="pack-price">€9</span>
-                  <span class="sub-price">€13</span>
+                  <span class="pack-price">€10</span>
                 </div>
                 <div class="tier-labels">
-                  <span>PACK</span>
-                  <span>SUB</span>
+                  <span>WITH ACCOUNT</span>
                 </div>
               </div>
-              <div class="tier">
+              <div class="tier offpeak-pricing" style="display: block;">
                 <div class="tier-header">
                   <span class="tier-name">3 HOURS</span>
                 </div>
                 <div class="tier-duration">VIP</div>
                 <div class="tier-pricing">
-                  <span class="pack-price">€15</span>
-                  <span class="sub-price">€20</span>
+                  <span class="pack-price">€25</span>
                 </div>
                 <div class="tier-labels">
-                  <span>PACK</span>
-                  <span>SUB</span>
+                  <span>WITH ACCOUNT</span>
                 </div>
               </div>
-              <div class="tier">
+
+              <!-- Peak Pricing -->
+              <div class="tier tier-featured peak-pricing" style="display: none;">
                 <div class="tier-header">
-                  <span class="tier-name">5 HOURS</span>
+                  <span class="tier-name">1 HOUR</span>
                 </div>
                 <div class="tier-duration">VIP</div>
                 <div class="tier-pricing">
-                  <span class="pack-price">€25</span>
-                  <span class="sub-price">€35</span>
+                  <span class="pack-price">€12</span>
                 </div>
                 <div class="tier-labels">
-                  <span>PACK</span>
-                  <span>SUB</span>
+                  <span>WITH ACCOUNT</span>
+                </div>
+              </div>
+              <div class="tier peak-pricing" style="display: none;">
+                <div class="tier-header">
+                  <span class="tier-name">3 HOURS</span>
+                </div>
+                <div class="tier-duration">VIP</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€30</span>
+                </div>
+                <div class="tier-labels">
+                  <span>WITH ACCOUNT</span>
                 </div>
               </div>
             </div>
@@ -471,49 +522,68 @@
                 <img src="assets/langame.svg" alt="LanGame Logo" class="langame-logo" />
                 BOOK NOW
               </button>
-              <a href="#pricing" class="btn btn-outline" data-scroll>ALL ZONE PRICES</a>
+              <button class="btn btn-outline" onclick="document.getElementById('pricing-modal').showModal()">VIEW ALL ZONES</button>
             </div>
           </div>
 
           <!-- Supreme Zone Content -->
-          <div class="zone-content" data-zone-content="streamer">
+          <div class="zone-content" data-zone-content="supreme">
             <h3 class="zone-title">SUPREME ZONE</h3>
             <p class="zone-description">Professional streaming setup with dual PC configuration, green screen, and broadcast lighting. Perfect for content creators and streamers.</p>
             <div class="pricing-tiers">
-              <div class="tier tier-featured">
+              <!-- Off-Peak Pricing (3x Bootcamp) -->
+              <div class="tier tier-featured offpeak-pricing" style="display: block;">
+                <div class="tier-header">
+                  <span class="tier-name">1 HOUR</span>
+                </div>
+                <div class="tier-duration">SUPREME</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€21</span>
+                  <span class="sub-price">€18</span>
+                </div>
+                <div class="tier-labels">
+                  <span>NO ACCOUNT</span>
+                  <span>WITH ACCOUNT</span>
+                </div>
+              </div>
+              <div class="tier offpeak-pricing" style="display: block;">
                 <div class="tier-header">
                   <span class="tier-name">3 HOURS</span>
                 </div>
                 <div class="tier-duration">SUPREME</div>
                 <div class="tier-pricing">
-                  <span class="pack-price">€20</span>
+                  <span class="pack-price">€45</span>
                 </div>
                 <div class="tier-labels">
-                  <span>BASE</span>
+                  <span>WITH ACCOUNT</span>
                 </div>
               </div>
-              <div class="tier">
+
+              <!-- Peak Pricing (3x Bootcamp) -->
+              <div class="tier tier-featured peak-pricing" style="display: none;">
                 <div class="tier-header">
-                  <span class="tier-name">5 HOURS</span>
+                  <span class="tier-name">1 HOUR</span>
                 </div>
                 <div class="tier-duration">SUPREME</div>
                 <div class="tier-pricing">
-                  <span class="pack-price">€30</span>
+                  <span class="pack-price">€27</span>
+                  <span class="sub-price">€24</span>
                 </div>
                 <div class="tier-labels">
-                  <span>BASE</span>
+                  <span>NO ACCOUNT</span>
+                  <span>WITH ACCOUNT</span>
                 </div>
               </div>
-              <div class="tier">
+              <div class="tier peak-pricing" style="display: none;">
                 <div class="tier-header">
-                  <span class="tier-name">10 HOURS</span>
+                  <span class="tier-name">3 HOURS</span>
                 </div>
                 <div class="tier-duration">SUPREME</div>
                 <div class="tier-pricing">
-                  <span class="pack-price">€50</span>
+                  <span class="pack-price">€63</span>
                 </div>
                 <div class="tier-labels">
-                  <span>BASE</span>
+                  <span>WITH ACCOUNT</span>
                 </div>
               </div>
             </div>
@@ -583,55 +653,40 @@
                 <img src="assets/langame.svg" alt="LanGame Logo" class="langame-logo" />
                 BOOK NOW
               </button>
-              <a href="#pricing" class="btn btn-outline" data-scroll>ALL ZONE PRICES</a>
+              <button class="btn btn-outline" onclick="document.getElementById('pricing-modal').showModal()">VIEW ALL ZONES</button>
             </div>
           </div>
 
           <!-- PS5 Zone Content -->
           <div class="zone-content" data-zone-content="cinema">
-            <h3 class="zone-title">PS5 ZONE</h3>
+            <h3 class="zone-title">PS5 PREMIUM ZONE</h3>
             <p class="zone-description">Premium entertainment experience with 98" QLED display, Dolby Atmos sound system, and comfortable recliners. Perfect for movies and PS5 gaming.</p>
             <div class="pricing-tiers">
-              <div class="tier tier-featured">
+              <!-- Off-Peak Pricing -->
+              <div class="tier tier-featured offpeak-pricing" style="display: block;">
                 <div class="tier-header">
                   <span class="tier-name">1 HOUR</span>
                 </div>
                 <div class="tier-duration">PS5 ZONE</div>
                 <div class="tier-pricing">
-                  <span class="pack-price">€17</span>
-                  <span class="sub-price">€25</span>
+                  <span class="pack-price">€35</span>
                 </div>
                 <div class="tier-labels">
-                  <span>PACK</span>
-                  <span>SUB</span>
+                  <span>BASE PRICE</span>
                 </div>
               </div>
-              <div class="tier">
+
+              <!-- Peak Pricing -->
+              <div class="tier tier-featured peak-pricing" style="display: none;">
                 <div class="tier-header">
-                  <span class="tier-name">3 HOURS</span>
+                  <span class="tier-name">1 HOUR</span>
                 </div>
                 <div class="tier-duration">PS5 ZONE</div>
                 <div class="tier-pricing">
-                  <span class="pack-price">€30</span>
-                  <span class="sub-price">€40</span>
+                  <span class="pack-price">€45</span>
                 </div>
                 <div class="tier-labels">
-                  <span>PACK</span>
-                  <span>SUB</span>
-                </div>
-              </div>
-              <div class="tier">
-                <div class="tier-header">
-                  <span class="tier-name">5 HOURS</span>
-                </div>
-                <div class="tier-duration">PS5 ZONE</div>
-                <div class="tier-pricing">
-                  <span class="pack-price">€42</span>
-                  <span class="sub-price">€50</span>
-                </div>
-                <div class="tier-labels">
-                  <span>PACK</span>
-                  <span>SUB</span>
+                  <span>BASE PRICE</span>
                 </div>
               </div>
             </div>
@@ -681,7 +736,7 @@
                 <img src="assets/langame.svg" alt="LanGame Logo" class="langame-logo" />
                 BOOK NOW
               </button>
-              <a href="#pricing" class="btn btn-outline" data-scroll>ALL ZONE PRICES</a>
+              <button class="btn btn-outline" onclick="document.getElementById('pricing-modal').showModal()">VIEW ALL ZONES</button>
             </div>
           </div>
         </div>
@@ -690,102 +745,10 @@
         <canvas id="zones-bg-canvas" class="zones-background" aria-hidden="true"></canvas>
       </section>
 
-      <section id="pricing" class="section">
-        <header class="section-head">
-          <h2 class="section-title">Pricing (EUR)</h2>
-          <p class="section-sub"><strong>PACK</strong> = Off-peak (10AM-3PM & 10PM-3AM) at 50% OFF | <strong>SUB</strong> = Peak hours (3PM-10PM)</p>
-        </header>
-        <div class="pricing-notice reveal">
-          <span class="badge badge--reduced">PACK Hours (50% OFF)</span>
-          <span>10AM–3PM and 10PM–3AM</span>
-        </div>
-
-        <div class="pricing-panels reveal">
-          <!-- Comfort -->
-          <article class="price-panel">
-            <header class="price-head">
-              <h3 class="zone-name">Comfort</h3>
-              <div class="head-meta"><span class="chip">PC</span><span class="chip">2K • 180Hz</span></div>
-            </header>
-            <div class="price-rows">
-              <div class="row row--header"><div class="col">Session</div><div class="col">PACK</div><div class="col">SUB</div></div>
-              <div class="row"><div class="col">1 hour</div><div class="col">€4</div><div class="col">€7</div></div>
-              <div class="row"><div class="col">3 hours</div><div class="col">€10</div><div class="col">€15</div></div>
-              <div class="row"><div class="col">5 hours</div><div class="col">€22</div><div class="col">€30</div></div>
-              <div class="row"><div class="col">10 hours</div><div class="col" data-price-comfort-base10>€51</div><div class="col" data-price-comfort-red10>—</div></div>
-            </div>
-            <footer class="price-foot"><button class="btn btn-primary" data-open="booking-modal">Reserve</button></footer>
-          </article>
-
-          <!-- Bootcamp -->
-          <article class="price-panel">
-            <header class="price-head">
-              <h3 class="zone-name">Bootcamp</h3>
-              <div class="head-meta"><span class="chip">PC</span><span class="chip">360Hz</span></div>
-            </header>
-            <div class="price-rows">
-              <div class="row row--header"><div class="col">Session</div><div class="col">PACK</div><div class="col">SUB</div></div>
-              <div class="row"><div class="col">1 hour</div><div class="col">€6</div><div class="col">€10</div></div>
-              <div class="row"><div class="col">3 hours</div><div class="col">€15</div><div class="col">€20</div></div>
-              <div class="row"><div class="col">5 hours</div><div class="col">€30</div><div class="col">€40</div></div>
-              <div class="row"><div class="col">10 hours</div><div class="col" data-price-bootcamp-base10>€68</div><div class="col" data-price-bootcamp-red10>—</div></div>
-            </div>
-            <footer class="price-foot"><button class="btn btn-primary" data-open="booking-modal">Reserve</button></footer>
-          </article>
-
-          <!-- VIP -->
-          <article class="price-panel">
-            <header class="price-head">
-              <h3 class="zone-name">VIP</h3>
-              <div class="head-meta"><span class="chip">PC</span><span class="chip">4K • 240Hz</span></div>
-            </header>
-            <div class="price-rows">
-              <div class="row row--header"><div class="col">Session</div><div class="col">PACK</div><div class="col">SUB</div></div>
-              <div class="row"><div class="col">1 hour</div><div class="col">€9</div><div class="col">€13</div></div>
-              <div class="row"><div class="col">3 hours</div><div class="col">€15</div><div class="col">€20</div></div>
-              <div class="row"><div class="col">5 hours</div><div class="col">€25</div><div class="col">€35</div></div>
-              <div class="row"><div class="col">10 hours</div><div class="col" data-price-vip-base10>€60</div><div class="col" data-price-vip-red10>—</div></div>
-            </div>
-            <footer class="price-foot"><button class="btn btn-primary" data-open="booking-modal">Reserve</button></footer>
-          </article>
-
-          <!-- Supreme -->
-          <article class="price-panel">
-            <header class="price-head">
-              <h3 class="zone-name">Supreme</h3>
-              <div class="head-meta"><span class="chip">Studio</span><span class="chip">Dual Screen</span></div>
-            </header>
-            <div class="price-rows">
-              <div class="row row--header"><div class="col">Session</div><div class="col">SUB</div><div class="col muted">PACK</div></div>
-              <div class="row"><div class="col">3 hours</div><div class="col">€20</div><div class="col">—</div></div>
-              <div class="row"><div class="col">5 hours</div><div class="col">€30</div><div class="col">—</div></div>
-              <div class="row"><div class="col">10 hours</div><div class="col">€50</div><div class="col">—</div></div>
-            </div>
-            <footer class="price-foot"><button class="btn btn-primary" data-open="booking-modal">Reserve</button></footer>
-          </article>
-
-          <!-- PS5 Zone -->
-          <article class="price-panel">
-            <header class="price-head">
-              <h3 class="zone-name">PS5 Zone</h3>
-              <div class="head-meta"><span class="chip">Room</span><span class="chip">98" QLED</span></div>
-            </header>
-            <div class="price-rows">
-              <div class="row row--header"><div class="col">Session</div><div class="col">PACK</div><div class="col">SUB</div></div>
-              <div class="row"><div class="col">1 hour</div><div class="col">€17</div><div class="col">€25</div></div>
-              <div class="row"><div class="col">3 hours</div><div class="col">€30</div><div class="col">€40</div></div>
-              <div class="row"><div class="col">5 hours</div><div class="col">€42</div><div class="col">€50</div></div>
-              <div class="row"><div class="col">10 hours</div><div class="col" data-price-cinema-base10>€85</div><div class="col" data-price-cinema-red10>—</div></div>
-            </div>
-            <footer class="price-foot"><button class="btn btn-primary" data-open="booking-modal">Reserve</button></footer>
-          </article>
-        </div>
-      </section>
-
       <section id="games" class="section section-tight">
         <header class="section-head">
           <h2 class="section-title">Games</h2>
-          <p class="section-sub">Popular titles pre‑installed. Tell us what you want to play.</p>
+          <p class="section-sub">Popular pre‑installed titles.</p>
         </header>
         
         <!-- Popular Games Grid -->
@@ -1260,6 +1223,227 @@
         <footer class="modal-foot">
           <button class="btn btn-primary" onclick="document.getElementById('games-modal').close()">Close</button>
         </footer>
+      </div>
+    </dialog>
+
+    <!-- All Prices Modal -->
+    <dialog id="pricing-modal" class="pricing-modal">
+      <div class="pricing-modal-overlay"></div>
+      <div class="pricing-modal-content">
+        <button class="pricing-modal-close" aria-label="Close modal">&times;</button>
+        <h2 class="pricing-modal-title">ALL ZONE PRICES</h2>
+        <p class="pricing-modal-subtitle">Complete pricing overview for all gaming zones</p>
+        
+        <div class="pricing-modal-grid">
+          <!-- Comfort Zone -->
+          <div class="pricing-card">
+            <div class="pricing-card-header">
+              <h3 class="pricing-card-title">COMFORT</h3>
+              <span class="pricing-card-badge">PC 1-12</span>
+            </div>
+            <div class="pricing-card-specs">
+              <div class="spec-chip">i7 14700K</div>
+              <div class="spec-chip">RTX 5060</div>
+              <div class="spec-chip">180Hz 2K</div>
+            </div>
+            <div class="pricing-card-body">
+              <div class="pricing-section">
+                <div class="pricing-section-header">OFF-PEAK</div>
+                <div class="pricing-row">
+                  <span>1 Hour (No Acc)</span>
+                  <span class="price">€6</span>
+                </div>
+                <div class="pricing-row">
+                  <span>1 Hour (With Acc)</span>
+                  <span class="price">€5</span>
+                </div>
+                <div class="pricing-row">
+                  <span>3 Hours (With Acc)</span>
+                  <span class="price">€12</span>
+                </div>
+              </div>
+              <div class="pricing-section">
+                <div class="pricing-section-header">PEAK</div>
+                <div class="pricing-row">
+                  <span>1 Hour (No Acc)</span>
+                  <span class="price">€8</span>
+                </div>
+                <div class="pricing-row">
+                  <span>1 Hour (With Acc)</span>
+                  <span class="price">€7</span>
+                </div>
+                <div class="pricing-row">
+                  <span>3 Hours (With Acc)</span>
+                  <span class="price">€18</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bootcamp Zone -->
+          <div class="pricing-card">
+            <div class="pricing-card-header">
+              <h3 class="pricing-card-title">BOOTCAMP</h3>
+              <span class="pricing-card-badge">PC 13-22</span>
+            </div>
+            <div class="pricing-card-specs">
+              <div class="spec-chip">i7 14700K</div>
+              <div class="spec-chip">RTX 5070 TI</div>
+              <div class="spec-chip">360Hz</div>
+            </div>
+            <div class="pricing-card-body">
+              <div class="pricing-section">
+                <div class="pricing-section-header">OFF-PEAK</div>
+                <div class="pricing-row">
+                  <span>1 Hour (No Acc)</span>
+                  <span class="price">€7</span>
+                </div>
+                <div class="pricing-row">
+                  <span>1 Hour (With Acc)</span>
+                  <span class="price">€6</span>
+                </div>
+                <div class="pricing-row">
+                  <span>3 Hours (With Acc)</span>
+                  <span class="price">€15</span>
+                </div>
+              </div>
+              <div class="pricing-section">
+                <div class="pricing-section-header">PEAK</div>
+                <div class="pricing-row">
+                  <span>1 Hour (No Acc)</span>
+                  <span class="price">€9</span>
+                </div>
+                <div class="pricing-row">
+                  <span>1 Hour (With Acc)</span>
+                  <span class="price">€8</span>
+                </div>
+                <div class="pricing-row">
+                  <span>3 Hours (With Acc)</span>
+                  <span class="price">€21</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- VIP Zone -->
+          <div class="pricing-card pricing-card-featured">
+            <div class="pricing-card-header">
+              <h3 class="pricing-card-title">VIP</h3>
+              <span class="pricing-card-badge">PC 23-28</span>
+            </div>
+            <div class="pricing-card-specs">
+              <div class="spec-chip">i9 14900K</div>
+              <div class="spec-chip">RTX 5070</div>
+              <div class="spec-chip">240Hz 4K</div>
+            </div>
+            <div class="pricing-card-body">
+              <div class="pricing-notice">Account Required</div>
+              <div class="pricing-section">
+                <div class="pricing-section-header">OFF-PEAK</div>
+                <div class="pricing-row">
+                  <span>1 Hour</span>
+                  <span class="price">€10</span>
+                </div>
+                <div class="pricing-row">
+                  <span>3 Hours</span>
+                  <span class="price">€25</span>
+                </div>
+              </div>
+              <div class="pricing-section">
+                <div class="pricing-section-header">PEAK</div>
+                <div class="pricing-row">
+                  <span>1 Hour</span>
+                  <span class="price">€12</span>
+                </div>
+                <div class="pricing-row">
+                  <span>3 Hours</span>
+                  <span class="price">€30</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Supreme Zone -->
+          <div class="pricing-card pricing-card-featured">
+            <div class="pricing-card-header">
+              <h3 class="pricing-card-title">SUPREME</h3>
+              <span class="pricing-card-badge">STREAMING</span>
+            </div>
+            <div class="pricing-card-specs">
+              <div class="spec-chip">i9 14900K</div>
+              <div class="spec-chip">RTX 5080</div>
+              <div class="spec-chip">180Hz 2K</div>
+            </div>
+            <div class="pricing-card-body">
+              <div class="pricing-section">
+                <div class="pricing-section-header">OFF-PEAK</div>
+                <div class="pricing-row">
+                  <span>1 Hour (No Acc)</span>
+                  <span class="price">€21</span>
+                </div>
+                <div class="pricing-row">
+                  <span>1 Hour (With Acc)</span>
+                  <span class="price">€18</span>
+                </div>
+                <div class="pricing-row">
+                  <span>3 Hours (With Acc)</span>
+                  <span class="price">€45</span>
+                </div>
+              </div>
+              <div class="pricing-section">
+                <div class="pricing-section-header">PEAK</div>
+                <div class="pricing-row">
+                  <span>1 Hour (No Acc)</span>
+                  <span class="price">€27</span>
+                </div>
+                <div class="pricing-row">
+                  <span>1 Hour (With Acc)</span>
+                  <span class="price">€24</span>
+                </div>
+                <div class="pricing-row">
+                  <span>3 Hours (With Acc)</span>
+                  <span class="price">€63</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PS5 Zone -->
+          <div class="pricing-card pricing-card-premium">
+            <div class="pricing-card-header">
+              <h3 class="pricing-card-title">PS5 PREMIUM</h3>
+              <span class="pricing-card-badge">CONSOLE</span>
+            </div>
+            <div class="pricing-card-specs">
+              <div class="spec-chip">PS5</div>
+              <div class="spec-chip">98" QLED</div>
+              <div class="spec-chip">Dolby Atmos</div>
+            </div>
+            <div class="pricing-card-body">
+              <div class="pricing-section">
+                <div class="pricing-section-header">OFF-PEAK</div>
+                <div class="pricing-row">
+                  <span>1 Hour</span>
+                  <span class="price">€35</span>
+                </div>
+              </div>
+              <div class="pricing-section">
+                <div class="pricing-section-header">PEAK</div>
+                <div class="pricing-row">
+                  <span>1 Hour</span>
+                  <span class="price">€45</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pricing-modal-footer">
+          <div class="pricing-modal-note">
+            <strong>Off-Peak:</strong> Mon-Thu 10:00-15:00 & 22:00-3:00 | Fri 10:00-15:00 | Sun 22:00-3:00<br>
+            <strong>Peak:</strong> Mon-Thu 15:00-22:00 | Fri 15:00-3:00 | Sat 10:00-3:00 | Sun 10:00-22:00
+          </div>
+        </div>
       </div>
     </dialog>
 

@@ -544,7 +544,7 @@ for (const sec of document.querySelectorAll('section[id]')) {
 
 // Zone buttons functionality
 (function () {
-  const zoneButtons = document.querySelectorAll('.zone-btn');
+  const zoneButtons = document.querySelectorAll('.zone-btn[data-zone]');
   const zoneContents = document.querySelectorAll('.zone-content');
   let buttonClickTimeout;
   
@@ -558,7 +558,7 @@ for (const sec of document.querySelectorAll('section[id]')) {
       buttonClickTimeout = setTimeout(() => {
         const targetZone = button.getAttribute('data-zone');
         
-        // Update active button
+        // Update active button (only for zone selection buttons, not pricing mode buttons)
         zoneButtons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
         
@@ -928,4 +928,102 @@ for (const sec of document.querySelectorAll('section[id]')) {
       requestAnimationFrame(tick);
     }
   }, 100);
+})();
+
+// Pricing Toggle for Peak/Off-Peak Times
+(function() {
+  const pricingToggleBtns = document.querySelectorAll('[data-pricing-mode]');
+  const offpeakHoursDiv = document.querySelector('.offpeak-hours');
+  const peakHoursDiv = document.querySelector('.peak-hours');
+  
+  if (!pricingToggleBtns.length) return;
+  
+  pricingToggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mode = btn.getAttribute('data-pricing-mode');
+      
+      // Update active button
+      pricingToggleBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Toggle hours info
+      if (mode === 'offpeak') {
+        offpeakHoursDiv.style.display = 'block';
+        peakHoursDiv.style.display = 'none';
+      } else {
+        offpeakHoursDiv.style.display = 'none';
+        peakHoursDiv.style.display = 'block';
+      }
+      
+      // Toggle pricing tiers with animation
+      const offpeakPricing = document.querySelectorAll('.offpeak-pricing');
+      const peakPricing = document.querySelectorAll('.peak-pricing');
+      const pricingTiersContainers = document.querySelectorAll('.pricing-tiers');
+      const activeZoneContent = document.querySelector('.zone-content.active');
+      
+      // Trigger animation on the active zone-content container
+      if (activeZoneContent) {
+        activeZoneContent.style.animation = 'none';
+        activeZoneContent.offsetHeight; // trigger reflow
+        activeZoneContent.style.animation = 'fadeIn 0.4s ease-in-out';
+      }
+      
+      // Trigger animation on all pricing-tiers containers
+      pricingTiersContainers.forEach(container => {
+        container.style.animation = 'none';
+        container.offsetHeight; // trigger reflow
+        container.style.animation = 'fadeIn 0.4s ease-in-out';
+      });
+      
+      // First hide all tiers
+      offpeakPricing.forEach(el => el.style.display = 'none');
+      peakPricing.forEach(el => el.style.display = 'none');
+      
+      // Then show the appropriate ones with a slight delay for animation
+      setTimeout(() => {
+        if (mode === 'offpeak') {
+          offpeakPricing.forEach(el => {
+            el.style.display = 'block';
+          });
+        } else {
+          peakPricing.forEach(el => {
+            el.style.display = 'block';
+          });
+        }
+      }, 50);
+    });
+  });
+})();
+
+// Pricing Modal Controls
+(function() {
+  const pricingModal = document.getElementById('pricing-modal');
+  const pricingModalClose = document.querySelector('.pricing-modal-close');
+  
+  if (pricingModal && pricingModalClose) {
+    // Close button
+    pricingModalClose.addEventListener('click', () => {
+      pricingModal.close();
+    });
+    
+    // Close on backdrop click
+    pricingModal.addEventListener('click', (e) => {
+      const rect = pricingModal.getBoundingClientRect();
+      if (
+        e.clientX < rect.left ||
+        e.clientX > rect.right ||
+        e.clientY < rect.top ||
+        e.clientY > rect.bottom
+      ) {
+        pricingModal.close();
+      }
+    });
+    
+    // Close on Escape key
+    pricingModal.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        pricingModal.close();
+      }
+    });
+  }
 })();
