@@ -30,7 +30,6 @@
         <nav class="nav__links" role="navigation" aria-label="Primary">
           <a href="#zones" class="nav__link" data-scroll>Zones & Prices</a>
           <a href="#games" class="nav__link" data-scroll>Games</a>
-          <a href="#apps" class="nav__link" data-scroll>Booking</a>
           <a href="#locations" class="nav__link" data-scroll>Location</a>
           <a href="#contact" class="nav__link" data-scroll data-focus-contact>Contact</a>
         </nav>
@@ -47,10 +46,6 @@
           <h1 class="glow">YOUR UNIVERSE. YOUR CHOICE. FEEL <span>YOUR</span> GAME.</h1>
           <p class="subtitle">Discover Respawn Esports: premium eSports lounges where comfort and high-level service meet technological prowess.</p>
           <div class="cta-row">
-            <button class="langame-book-btn" onclick="document.getElementById('apps').scrollIntoView({behavior: 'smooth'})">
-              <img src="assets/langame.svg" alt="LanGame Logo" class="langame-logo" />
-              BOOK NOW
-            </button>
             <a href="#zones" class="btn btn--ghost" data-scroll>Explore Zones</a>
           </div>
           <div class="marquee" aria-hidden="true">
@@ -60,13 +55,13 @@
               <span>Pro Peripherals</span>
               <span>Private VIP Rooms</span>
               <span>PS5 Zone</span>
-              <span>LanGame Booking</span>
+              <span>Premium Gaming Experience</span>
               <span>165–360Hz Displays</span>
               <span>RTX 5060–5080 GPUs</span>
               <span>Pro Peripherals</span>
               <span>Private VIP Rooms</span>
               <span>PS5 Zone</span>
-              <span>LanGame Booking</span>
+              <span>Premium Gaming Experience</span>
             </div>
           </div>
         </div>
@@ -102,22 +97,6 @@
           <h2 class="section-title">Zones and Prices</h2>
           <p class="section-sub">Choose your setup — from competitive to cinematic.</p>
         </header>
-
-        <!-- Peak/Off-Peak Toggle -->
-        <div class="pricing-toggle reveal" style="display: flex; justify-content: center; gap: 12px; margin-bottom: 24px;">
-          <button class="zone-btn active" data-pricing-mode="offpeak" style="min-width: 150px;">Off-Peak Time</button>
-          <button class="zone-btn" data-pricing-mode="peak" style="min-width: 150px;">Peak Time</button>
-        </div>
-
-        <!-- Peak Hours Info -->
-        <div class="pricing-info reveal" style="text-align: center; margin-bottom: 24px; color: var(--muted); font-size: 14px;">
-          <div class="offpeak-hours" style="display: block;">
-            <strong>Off-Peak Hours:</strong> Mon-Thu (All Day) | Fri 10:00-15:00 | Sun 22:00-3:00
-          </div>
-          <div class="peak-hours" style="display: none;">
-            <strong>Peak Hours:</strong> Fri 15:00-3:00 | Sat 10:00-3:00 | Sun 10:00-22:00
-          </div>
-        </div>
         
         <!-- Zone Selection Buttons -->
         <div class="zone-buttons reveal">
@@ -135,8 +114,7 @@
             
             <!-- Pricing Tiers -->
             <div class="pricing-tiers">
-              <!-- Off-Peak Pricing -->
-              <div class="tier tier-featured offpeak-pricing" style="display: block;">
+              <div class="tier tier-featured">
                 <div class="tier-header">
                   <span class="tier-name">1 HOUR</span>
                 </div>
@@ -150,41 +128,13 @@
                   <span>WITH ACCOUNT</span>
                 </div>
               </div>
-              <div class="tier offpeak-pricing" style="display: block;">
+              <div class="tier">
                 <div class="tier-header">
                   <span class="tier-name">3 HOURS</span>
                 </div>
                 <div class="tier-duration">COMFORT</div>
                 <div class="tier-pricing">
                   <span class="pack-price">€12</span>
-                </div>
-                <div class="tier-labels">
-                  <span>WITH ACCOUNT</span>
-                </div>
-              </div>
-
-              <!-- Peak Pricing -->
-              <div class="tier tier-featured peak-pricing" style="display: none;">
-                <div class="tier-header">
-                  <span class="tier-name">1 HOUR</span>
-                </div>
-                <div class="tier-duration">COMFORT</div>
-                <div class="tier-pricing">
-                  <span class="pack-price">€7</span>
-                  <span class="sub-price">€6</span>
-                </div>
-                <div class="tier-labels">
-                  <span>NO ACCOUNT</span>
-                  <span>WITH ACCOUNT</span>
-                </div>
-              </div>
-              <div class="tier peak-pricing" style="display: none;">
-                <div class="tier-header">
-                  <span class="tier-name">3 HOURS</span>
-                </div>
-                <div class="tier-duration">COMFORT</div>
-                <div class="tier-pricing">
-                  <span class="pack-price">€15</span>
                 </div>
                 <div class="tier-labels">
                   <span>WITH ACCOUNT</span>
@@ -239,8 +189,8 @@
                   <img src="assets/television_2411367.svg" alt="Monitor Icon" />
                 </div>
                 <div class="spec-details">
-                  <div class="spec-brand">BENQ</div>
-                  <div class="spec-model">165HZ</div>
+                  <div class="spec-brand">BENQ MONITOR</div>
+                  <div class="spec-model">165HZ 2K</div>
                 </div>
               </div>
               
@@ -257,10 +207,6 @@
 
             <!-- Action Buttons -->
             <div class="zone-actions">
-              <button class="langame-book-btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
-                <img src="assets/langame.svg" alt="LanGame Logo" class="langame-logo" />
-                BOOK NOW
-              </button>
               <button class="btn btn-outline" onclick="document.getElementById('pricing-modal').showModal()">VIEW ALL ZONES</button>
             </div>
           </div>
@@ -270,8 +216,7 @@
             <h3 class="zone-title">BOOTCAMP ZONE</h3>
             <p class="zone-description">Our Bootcamp Zone designed for serious teams and competitive players. High-performance hardware for intense training sessions and tournaments.</p>
             <div class="pricing-tiers">
-              <!-- Off-Peak Pricing -->
-              <div class="tier tier-featured offpeak-pricing" style="display: block;">
+              <div class="tier tier-featured">
                 <div class="tier-header">
                   <span class="tier-name">1 HOUR</span>
                 </div>
@@ -285,41 +230,13 @@
                   <span>WITH ACCOUNT</span>
                 </div>
               </div>
-              <div class="tier offpeak-pricing" style="display: block;">
+              <div class="tier">
                 <div class="tier-header">
                   <span class="tier-name">3 HOURS</span>
                 </div>
                 <div class="tier-duration">BOOTCAMP</div>
                 <div class="tier-pricing">
                   <span class="pack-price">€15</span>
-                </div>
-                <div class="tier-labels">
-                  <span>WITH ACCOUNT</span>
-                </div>
-              </div>
-
-              <!-- Peak Pricing -->
-              <div class="tier tier-featured peak-pricing" style="display: none;">
-                <div class="tier-header">
-                  <span class="tier-name">1 HOUR</span>
-                </div>
-                <div class="tier-duration">BOOTCAMP</div>
-                <div class="tier-pricing">
-                  <span class="pack-price">€8</span>
-                  <span class="sub-price">€7</span>
-                </div>
-                <div class="tier-labels">
-                  <span>NO ACCOUNT</span>
-                  <span>WITH ACCOUNT</span>
-                </div>
-              </div>
-              <div class="tier peak-pricing" style="display: none;">
-                <div class="tier-header">
-                  <span class="tier-name">3 HOURS</span>
-                </div>
-                <div class="tier-duration">BOOTCAMP</div>
-                <div class="tier-pricing">
-                  <span class="pack-price">€18</span>
                 </div>
                 <div class="tier-labels">
                   <span>WITH ACCOUNT</span>
@@ -388,10 +305,6 @@
               </div>
             </div>
             <div class="zone-actions">
-              <button class="langame-book-btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
-                <img src="assets/langame.svg" alt="LanGame Logo" class="langame-logo" />
-                BOOK NOW
-              </button>
               <button class="btn btn-outline" onclick="document.getElementById('pricing-modal').showModal()">VIEW ALL ZONES</button>
             </div>
           </div>
@@ -401,8 +314,7 @@
             <h3 class="zone-title">VIP ZONE</h3>
             <p class="zone-description">Our VIP Zone offers premium comfort and top-tier performance for the ultimate gaming experience. <strong style="color: var(--primary);">Account Required - No walk-ins allowed.</strong></p>
             <div class="pricing-tiers">
-              <!-- Off-Peak Pricing -->
-              <div class="tier tier-featured offpeak-pricing" style="display: block;">
+              <div class="tier tier-featured">
                 <div class="tier-header">
                   <span class="tier-name">1 HOUR</span>
                 </div>
@@ -414,39 +326,13 @@
                   <span>WITH ACCOUNT</span>
                 </div>
               </div>
-              <div class="tier offpeak-pricing" style="display: block;">
+              <div class="tier">
                 <div class="tier-header">
                   <span class="tier-name">3 HOURS</span>
                 </div>
                 <div class="tier-duration">VIP</div>
                 <div class="tier-pricing">
                   <span class="pack-price">€25</span>
-                </div>
-                <div class="tier-labels">
-                  <span>WITH ACCOUNT</span>
-                </div>
-              </div>
-
-              <!-- Peak Pricing -->
-              <div class="tier tier-featured peak-pricing" style="display: none;">
-                <div class="tier-header">
-                  <span class="tier-name">1 HOUR</span>
-                </div>
-                <div class="tier-duration">VIP</div>
-                <div class="tier-pricing">
-                  <span class="pack-price">€12</span>
-                </div>
-                <div class="tier-labels">
-                  <span>WITH ACCOUNT</span>
-                </div>
-              </div>
-              <div class="tier peak-pricing" style="display: none;">
-                <div class="tier-header">
-                  <span class="tier-name">3 HOURS</span>
-                </div>
-                <div class="tier-duration">VIP</div>
-                <div class="tier-pricing">
-                  <span class="pack-price">€30</span>
                 </div>
                 <div class="tier-labels">
                   <span>WITH ACCOUNT</span>
@@ -515,10 +401,6 @@
               </div>
             </div>
             <div class="zone-actions">
-              <button class="langame-book-btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
-                <img src="assets/langame.svg" alt="LanGame Logo" class="langame-logo" />
-                BOOK NOW
-              </button>
               <button class="btn btn-outline" onclick="document.getElementById('pricing-modal').showModal()">VIEW ALL ZONES</button>
             </div>
           </div>
@@ -528,31 +410,76 @@
             <h3 class="zone-title">PS5 PREMIUM ZONE</h3>
             <p class="zone-description">Premium entertainment experience with 98" QLED display, Dolby Atmos sound system, and comfortable recliners. Perfect for movies and PS5 gaming.</p>
             <div class="pricing-tiers">
-              <!-- Off-Peak Pricing -->
-              <div class="tier tier-featured offpeak-pricing" style="display: block;">
+              <div class="tier">
                 <div class="tier-header">
-                  <span class="tier-name">1 HOUR</span>
+                  <span class="tier-name">1 PERSON</span>
+                </div>
+                <div class="tier-duration">PS5 ZONE</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€15</span>
+                </div>
+                <div class="tier-labels">
+                  <span>PER HOUR</span>
+                </div>
+              </div>
+              <div class="tier">
+                <div class="tier-header">
+                  <span class="tier-name">2 PERSONS</span>
+                </div>
+                <div class="tier-duration">PS5 ZONE</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€25</span>
+                </div>
+                <div class="tier-labels">
+                  <span>PER HOUR</span>
+                </div>
+              </div>
+              <div class="tier">
+                <div class="tier-header">
+                  <span class="tier-name">3 PERSONS</span>
+                </div>
+                <div class="tier-duration">PS5 ZONE</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€35</span>
+                </div>
+                <div class="tier-labels">
+                  <span>PER HOUR</span>
+                </div>
+              </div>
+              <div class="tier">
+                <div class="tier-header">
+                  <span class="tier-name">4 PERSONS</span>
+                </div>
+                <div class="tier-duration">PS5 ZONE</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€40</span>
+                </div>
+                <div class="tier-labels">
+                  <span>PER HOUR</span>
+                </div>
+              </div>
+              <div class="tier">
+                <div class="tier-header">
+                  <span class="tier-name">5 PERSONS</span>
+                </div>
+                <div class="tier-duration">PS5 ZONE</div>
+                <div class="tier-pricing">
+                  <span class="pack-price">€45</span>
+                </div>
+                <div class="tier-labels">
+                  <span>PER HOUR</span>
+                </div>
+              </div>
+              <div class="tier tier-featured">
+                <div class="tier-header">
+                  <span class="tier-name">6 PERSONS</span>
                 </div>
                 <div class="tier-duration">PS5 ZONE</div>
                 <div class="tier-pricing">
                   <span class="pack-price">€50</span>
                 </div>
                 <div class="tier-labels">
-                  <span>BASE PRICE</span>
-                </div>
-              </div>
-
-              <!-- Peak Pricing -->
-              <div class="tier tier-featured peak-pricing" style="display: none;">
-                <div class="tier-header">
-                  <span class="tier-name">1 HOUR</span>
-                </div>
-                <div class="tier-duration">PS5 ZONE</div>
-                <div class="tier-pricing">
-                  <span class="pack-price">€70</span>
-                </div>
-                <div class="tier-labels">
-                  <span>BASE PRICE</span>
+                  <span>PER HOUR</span>
                 </div>
               </div>
             </div>
@@ -598,10 +525,6 @@
               </div>
             </div>
             <div class="zone-actions">
-              <button class="langame-book-btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
-                <img src="assets/langame.svg" alt="LanGame Logo" class="langame-logo" />
-                BOOK NOW
-              </button>
               <button class="btn btn-outline" onclick="document.getElementById('pricing-modal').showModal()">VIEW ALL ZONES</button>
             </div>
           </div>
@@ -676,201 +599,6 @@
             <span class="btn-count">50+ Titles</span>
             <div class="btn-shine"></div>
           </button>
-        </div>
-      </section>
-
-      <section id="apps" class="section">
-        <div class="langame-cutout-container">
-          <!-- Integrated Background Canvas -->
-          <canvas id="langame-bg-canvas" class="langame-background" aria-hidden="true"></canvas>
-          
-          <!-- Animated Background Elements -->
-          <div class="langame-bg-effects">
-            <div class="floating-orb orb-1"></div>
-            <div class="floating-orb orb-2"></div>
-            <div class="floating-orb orb-3"></div>
-            <div class="grid-overlay"></div>
-            <div class="pulse-ring ring-1"></div>
-            <div class="pulse-ring ring-2"></div>
-          </div>
-          
-          <!-- Main Content Container -->
-          <div class="langame-container">
-            <!-- Left Content -->
-            <div class="langame-content">
-              <div class="langame-badge">
-                <img src="assets/langame.svg" alt="LanGame Logo" class="langame-badge-logo" />
-                <span>LANGAME</span>
-              </div>
-              
-              <h1 class="langame-title">
-                Download
-                <span class="langame-title-highlight">booking app</span>
-              </h1>
-              
-              <p class="langame-subtitle">
-                To make a reservation, <strong>install the LanGame app</strong>
-              </p>
-              
-              <!-- Feature List -->
-              <div class="langame-features">
-                <div class="feature-item">
-                  <div class="feature-icon">
-                    <img src="assets/qr-code.svg" alt="QR Code" class="feature-icon-img" />
-                  </div>
-                  <div class="feature-text">
-                    <h3>QR-CODE LOGIN</h3>
-                    <p>Sign in without username and password</p>
-                  </div>
-                </div>
-                
-                <div class="feature-item">
-                  <div class="feature-icon">
-                    <img src="assets/location-pin.svg" alt="Location" class="feature-icon-img" />
-                  </div>
-                  <div class="feature-text">
-                    <h3>CLUB MAP ONLINE</h3>
-                    <p>Check which PC's are available in real time</p>
-                  </div>
-                </div>
-                
-                <div class="feature-item">
-                  <div class="feature-icon">
-                    <img src="assets/flash.svg" alt="Fast" class="feature-icon-img" />
-                  </div>
-                  <div class="feature-text">
-                    <h3>FAST BOOKING</h3>
-                    <p>Reserve your favorite PC with an extra <span class="discount">10% discount</span></p>
-                  </div>
-                </div>
-                
-                <div class="feature-item">
-                  <div class="feature-icon">
-                    <img src="assets/calculator.svg" alt="Calculator" class="feature-icon-img" />
-                  </div>
-                  <div class="feature-text">
-                    <h3>BOOKING CALC.</h3>
-                    <p>A built-in tool to find <strong>the best offer</strong></p>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Download Buttons -->
-              <div class="langame-download-buttons">
-                <a href="https://play.google.com/store/apps/details?id=com.f5computers.langame_aggregator&hl=en" class="download-btn google-play" target="_blank" rel="noopener">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" />
-                </a>
-                <a href="https://apps.apple.com/us/app/langame/id1642484175" class="download-btn app-store" target="_blank" rel="noopener">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" />
-                </a>
-              </div>
-            </div>
-            
-            <!-- Right Content - Futuristic Dashboard -->
-            <div class="langame-dashboard-container">
-              <!-- Central Hub -->
-              <div class="central-hub">
-                <div class="hub-core">
-                  <img src="assets/langame.svg" alt="LanGame" class="hub-logo" />
-                  <div class="hub-pulse"></div>
-                </div>
-                <div class="hub-rings">
-                  <div class="hub-ring ring-1"></div>
-                  <div class="hub-ring ring-2"></div>
-                  <div class="hub-ring ring-3"></div>
-                </div>
-              </div>
-              
-              <!-- Floating Data Cards -->
-              <div class="data-card card-1">
-                <div class="card-header">
-                  <div class="card-icon">⚡</div>
-                  <div class="card-status online"></div>
-                </div>
-                <div class="card-content">
-                  <div class="card-title">FAST BOOKING</div>
-                  <div class="card-value">10% OFF</div>
-                  <div class="card-progress">
-                    <div class="progress-bar" style="width: 85%"></div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="data-card card-2">
-                <div class="card-header">
-                  <div class="card-icon">🎮</div>
-                  <div class="card-status active"></div>
-                </div>
-                <div class="card-content">
-                  <div class="card-title">ACTIVE SESSIONS</div>
-                  <div class="card-value">24/32</div>
-                  <div class="card-progress">
-                    <div class="progress-bar" style="width: 75%"></div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="data-card card-3">
-                <div class="card-header">
-                  <div class="card-icon">📍</div>
-                  <div class="card-status online"></div>
-                </div>
-                <div class="card-content">
-                  <div class="card-title">AVAILABLE PCS</div>
-                  <div class="card-value">8 FREE</div>
-                  <div class="card-progress">
-                    <div class="progress-bar" style="width: 25%"></div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="data-card card-4">
-                <div class="card-header">
-                  <div class="card-icon">💰</div>
-                  <div class="card-status processing"></div>
-                </div>
-                <div class="card-content">
-                  <div class="card-title">BOOKING CALC</div>
-                  <div class="card-value">READY</div>
-                  <div class="card-progress">
-                    <div class="progress-bar" style="width: 60%"></div>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Holographic Elements -->
-              <div class="holo-element holo-1">
-                <div class="holo-content">QR LOGIN</div>
-              </div>
-              
-              <div class="holo-element holo-2">
-                <div class="holo-content">REAL-TIME</div>
-              </div>
-              
-              <div class="holo-element holo-3">
-                <div class="holo-content">INSTANT</div>
-              </div>
-              
-              <div class="holo-element holo-4">
-                <div class="holo-content">LIVE MAP</div>
-              </div>
-              
-              <!-- Connection Lines -->
-              <div class="connection-lines">
-                <svg width="100%" height="100%" class="connection-svg">
-                  <defs>
-                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" style="stop-color:#e60012;stop-opacity:0.8" />
-                      <stop offset="100%" style="stop-color:#ff1a2e;stop-opacity:0.2" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M200,150 Q300,100 400,200" stroke="url(#lineGradient)" stroke-width="2" fill="none" class="connection-path path-1"/>
-                  <path d="M150,300 Q250,250 350,350" stroke="url(#lineGradient)" stroke-width="2" fill="none" class="connection-path path-2"/>
-                  <path d="M100,200 Q200,150 300,250" stroke="url(#lineGradient)" stroke-width="2" fill="none" class="connection-path path-3"/>
-                </svg>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -974,7 +702,6 @@
         <nav class="footer-nav" aria-label="Footer">
           <a href="#pricing">Pricing</a>
           <a href="#games">Games</a>
-          <a href="#apps">App</a>
           <a href="#contact">Contact</a>
         </nav>
         <div class="contact">
@@ -1114,7 +841,6 @@
             </div>
             <div class="pricing-card-body">
               <div class="pricing-section">
-                <div class="pricing-section-header">OFF-PEAK</div>
                 <div class="pricing-row">
                   <span>1 Hour (No Acc)</span>
                   <span class="price">€6</span>
@@ -1126,21 +852,6 @@
                 <div class="pricing-row">
                   <span>3 Hours (With Acc)</span>
                   <span class="price">€12</span>
-                </div>
-              </div>
-              <div class="pricing-section">
-                <div class="pricing-section-header">PEAK</div>
-                <div class="pricing-row">
-                  <span>1 Hour (No Acc)</span>
-                  <span class="price">€7</span>
-                </div>
-                <div class="pricing-row">
-                  <span>1 Hour (With Acc)</span>
-                  <span class="price">€6</span>
-                </div>
-                <div class="pricing-row">
-                  <span>3 Hours (With Acc)</span>
-                  <span class="price">€15</span>
                 </div>
               </div>
             </div>
@@ -1159,7 +870,6 @@
             </div>
             <div class="pricing-card-body">
               <div class="pricing-section">
-                <div class="pricing-section-header">OFF-PEAK</div>
                 <div class="pricing-row">
                   <span>1 Hour (No Acc)</span>
                   <span class="price">€7</span>
@@ -1171,21 +881,6 @@
                 <div class="pricing-row">
                   <span>3 Hours (With Acc)</span>
                   <span class="price">€15</span>
-                </div>
-              </div>
-              <div class="pricing-section">
-                <div class="pricing-section-header">PEAK</div>
-                <div class="pricing-row">
-                  <span>1 Hour (No Acc)</span>
-                  <span class="price">€8</span>
-                </div>
-                <div class="pricing-row">
-                  <span>1 Hour (With Acc)</span>
-                  <span class="price">€7</span>
-                </div>
-                <div class="pricing-row">
-                  <span>3 Hours (With Acc)</span>
-                  <span class="price">€18</span>
                 </div>
               </div>
             </div>
@@ -1205,7 +900,6 @@
             <div class="pricing-card-body">
               <div class="pricing-notice">Account Required</div>
               <div class="pricing-section">
-                <div class="pricing-section-header">OFF-PEAK</div>
                 <div class="pricing-row">
                   <span>1 Hour</span>
                   <span class="price">€10</span>
@@ -1213,17 +907,6 @@
                 <div class="pricing-row">
                   <span>3 Hours</span>
                   <span class="price">€25</span>
-                </div>
-              </div>
-              <div class="pricing-section">
-                <div class="pricing-section-header">PEAK</div>
-                <div class="pricing-row">
-                  <span>1 Hour</span>
-                  <span class="price">€12</span>
-                </div>
-                <div class="pricing-row">
-                  <span>3 Hours</span>
-                  <span class="price">€30</span>
                 </div>
               </div>
             </div>
@@ -1242,27 +925,32 @@
             </div>
             <div class="pricing-card-body">
               <div class="pricing-section">
-                <div class="pricing-section-header">OFF-PEAK</div>
                 <div class="pricing-row">
-                  <span>1 Hour</span>
-                  <span class="price">€50</span>
+                  <span>1 Person</span>
+                  <span class="price">€15/hr</span>
                 </div>
-              </div>
-              <div class="pricing-section">
-                <div class="pricing-section-header">PEAK</div>
                 <div class="pricing-row">
-                  <span>1 Hour</span>
-                  <span class="price">€70</span>
+                  <span>2 Persons</span>
+                  <span class="price">€25/hr</span>
+                </div>
+                <div class="pricing-row">
+                  <span>3 Persons</span>
+                  <span class="price">€35/hr</span>
+                </div>
+                <div class="pricing-row">
+                  <span>4 Persons</span>
+                  <span class="price">€40/hr</span>
+                </div>
+                <div class="pricing-row">
+                  <span>5 Persons</span>
+                  <span class="price">€45/hr</span>
+                </div>
+                <div class="pricing-row">
+                  <span>6 Persons</span>
+                  <span class="price">€50/hr</span>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div class="pricing-modal-footer">
-          <div class="pricing-modal-note">
-            <strong>Off-Peak:</strong> Mon-Thu (All Day) | Fri 10:00-15:00 | Sun 22:00-3:00<br>
-            <strong>Peak:</strong> Fri 15:00-3:00 | Sat 10:00-3:00 | Sun 10:00-22:00
           </div>
         </div>
       </div>
