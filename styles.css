@@ -237,6 +237,28 @@ body:not([data-theme="light"]) {
 .promo-banner { display: flex; align-items: center; justify-content: space-between; gap: 12px; background: linear-gradient(90deg, rgba(34,255,153,.15), rgba(79,255,153,.1)); border: 1px solid var(--outline); border-radius: var(--radius); padding: 16px; }
 .badge { font-family: Orbitron, sans-serif; font-weight: 800; letter-spacing: .1em; padding: 6px 10px; border-radius: 999px; background: var(--primary); color: #031120; }
 
+ .giveaway-panel { display: flex; align-items: center; justify-content: space-between; gap: 16px; background: linear-gradient(90deg, rgba(34,255,153,.12), rgba(79,255,153,.08)); border: 1px solid var(--outline); border-radius: var(--radius); padding: 18px; }
+ .giveaway-panel__main { display: grid; gap: 8px; max-width: 820px; }
+ .giveaway-panel__title { font-family: Orbitron, sans-serif; letter-spacing: .06em; text-transform: uppercase; font-size: clamp(18px, 2.2vw, 28px); margin: 0; }
+ .giveaway-panel__sub { color: var(--muted); margin: 0; }
+ .giveaway-panel__actions { display: flex; align-items: center; justify-content: flex-end; }
+
+ .page { padding-top: 112px; padding-bottom: 96px; }
+ .page-title { font-family: Orbitron, sans-serif; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 8px; font-size: clamp(28px, 3.4vw, 56px); }
+ .page-subtitle { color: var(--muted); margin: 0 0 24px; }
+ .rules-card { background: var(--card); border: 1px solid var(--outline); border-radius: var(--radius); padding: 18px; }
+ .rules-card h2 { font-family: Orbitron, sans-serif; letter-spacing: .06em; text-transform: uppercase; font-size: 18px; margin: 18px 0 10px; }
+ .rules-card h2:first-child { margin-top: 0; }
+ .rules-card p { margin: 0 0 10px; }
+ .rules-card ul, .rules-card ol { margin: 0 0 10px; padding-left: 22px; color: var(--muted); }
+ .rules-card li { margin: 6px 0; }
+ .rules-card strong { color: var(--text); }
+
+ @media (max-width: 860px) {
+  .giveaway-panel { flex-direction: column; align-items: flex-start; }
+  .giveaway-panel__actions { width: 100%; justify-content: flex-start; }
+ }
+
 .contact-form { max-width: 900px; margin: 0 auto; background: var(--card); border: 1px solid var(--outline); border-radius: var(--radius); padding: 16px; }
 
 [data-theme="light"] .contact-form { box-shadow: none; }
