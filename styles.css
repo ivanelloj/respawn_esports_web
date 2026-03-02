@@ -763,11 +763,24 @@ body { font-family: 'Orbitron', system-ui, -apple-system, Segoe UI, Roboto, Ubun
   .footer-grid { grid-template-columns: 1fr; justify-items: start; }
   /* Keep nav links visible on mobile with 2 rows */
   .nav { background: rgba(5,10,6,0.75); backdrop-filter: blur(12px); }
-  .nav__inner { flex-wrap: wrap; padding: 8px 16px 6px; min-height: auto; }
-  .brand { order: 1; font-size: 14px; flex-shrink: 0; }
-  .nav__actions { order: 2; margin-left: auto; flex-shrink: 0; }
-  .nav__links { display: flex !important; flex-wrap: wrap; justify-content: center; width: 100%; order: 3; margin-left: 0; gap: 8px; margin-top: 6px; }
-  .nav__link { padding: 8px 12px; font-size: 13px; white-space: nowrap; }
+  .nav__inner { flex-wrap: nowrap; padding: 6px 12px; min-height: auto; gap: 10px; }
+  .brand { order: 1; font-size: 13px; flex-shrink: 0; }
+  .nav__actions { order: 3; margin-left: 0; flex-shrink: 0; }
+  .nav__links {
+    display: flex !important;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: auto;
+    order: 2;
+    margin-left: auto;
+    gap: 6px;
+    margin-top: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav__link { padding: 6px 10px; font-size: 12px; white-space: nowrap; }
+
+  .page { padding-top: 96px; padding-bottom: 72px; }
 
   .hero h1 { font-size: 32px; }
   .section { padding: 72px 0; }
